@@ -18,27 +18,19 @@ services:
       dfrontend:
         ipv4_address: 10.1.2.6
     volumes:
-      - pvzdweb.config:/config:Z
-      - pvzdweb.var_lib_git:/var/lib/git:z
-      - pvzdweb.var_log:/var/log:Z
-      - pvzdweb.opt_PVZDweb_database:/opt/PVZDweb/database:Z
-  pvzdweb-sshtest:
-    build:
-        context: .
-        dockerfile: Dockerfile99.sshtest
-    image: r2h2/pvzdweb-sshtest
-    container_name: pvzdweb-sshtest
-    hostname: pvzdweb-sshtest
-    networks:
-      dfrontend:
-    volumes:
-      - pvzdweb-sshtest.log:/var/log:Z
-    cap_drop:
-      - ALL
+        - openldap_pv.etc_openldap:/etc/openldap:Z
+        - openldap_pv.var_db:/var/db:Z
+        - openldap_pv.var_log:/var/log:Z
 networks:
   dfrontend:
     external: true
 volumes:
-    openldap_pv.db:/var/db:Z
-    openldap_pv.etc:/etc/openldap:Z
-    openldap_pv.conf:/etc/conf:Z
+    openldap_pv.etc_openldap:
+      external:
+        name: openldap_pv.etc_openldap
+    openldap_pv.var_db:
+      external:
+        name: openldap_pv.var_db
+    openldap_pv.var_log:
+      external:
+        name: openldap_pv.var_log
