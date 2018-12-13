@@ -1,0 +1,28 @@
+= Configuring Redundant OpenLDAP
+
+- Use a common global configuration
+  ** Either store it in LDAP, or
+  ** Distribute a static configuration: include slapd_repl.conf in slapd.conf
+- The configuration includes the list of servers:
+
+    serverID  1 ldap://ldap1.local:8389
+    serverID  2 ldap://ldap2.local:8389
+    serverID  3 ldap://ldap3.local:8389
+
+  And there is a
+
+    syncrepl rid=1
+        provider=ldap://ldap1.local:8389
+        ...
+    syncrepl rid=2
+        provider=ldap://ldap2.local:8389
+        ...
+    syncrepl rid=3
+        provider=ldap://ldap3.local:8389
+        ...
+
+One of the URIs in serverID must _exactly_ math the -h directive of the slaps startup command. This
+way the daemon knows how to exclude itself form the repliaction. However, the URI may bind to the
+docker host. In this case th name must be added to the local /etc/hosts when the container is
+created (requires write access for user ldap)
+-

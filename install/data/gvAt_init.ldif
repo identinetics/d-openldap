@@ -1,0 +1,634 @@
+dn: dc=at
+objectClass: domain
+dc: at
+
+dn: dc=gv,dc=at
+objectClass: domain
+objectClass: top
+dc: gv
+
+dn: gvOuId=AT:TEST:1, dc=gv, dc=at
+gvScope: public
+gvNotValidBefore: 2000-01-01
+gvOuVKZ: BMSPT
+o: Bundesministerium f. Standardportal offizielle Tests
+ou: Bundesministerium f. Standardportal offizielle Tests
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvOrganisation
+objectClass: top
+objectClass: organizationalUnit
+objectClass: gvOrgUnit
+gvOuCn: BM f. Stdportal Test
+cn: BM Standard Portal Test
+gvStatus: active
+dc: test
+gvOuId: AT:TEST:1
+
+dn: ou=people, gvOuId=AT:TEST:1, dc=gv, dc=at
+ou: people
+objectClass: organizationalUnit
+objectClass: top
+
+dn: gvGid=AT:B:1:12345,ou=people, gvOuId=AT:TEST:1, dc=gv, dc=at
+displayName: User Test
+gvStatus: active
+gvRights: gvApplId=localtest@bmspot.gv.at,ou=Applications,gvOuId=AT:TEST:1,dc=gv,dc=AT$test(x=12,y=13,z=99);test(GKZ=12345);test(DST=xxx);test(test=true) ;test(a=a,b=1,b=2,c=3);test(x=,y=)
+gvRights: gvApplId=testAxisEcho@bmspot.gv.at,ou=Applications,gvOuId=AT:TEST:1,dc=gv,dc=at$test
+gvRights: gvApplId=appUserStat@bmsport.gv.at,ou=Applications,gvOuId=AT:TEST:1,dc=gv,dc=at$userstatistic
+gvRights: gvApplId=userUserStat@bmspot.gv.at,ou=Applications,gvOuId=AT:TEST:1,dc=gv,dc=at$userstatistic
+gvRights: gvApplId=appDebugTicket@bmspot.gv.at,ou=Applications,gvOuId=AT:TEST:1,dc=gv,dc=at$debug
+gvRights: gvApplId=userDebugTicket@bmspot.gv.at,ou=Applications,gvOuId=AT:TEST:1,dc=gv,dc=at$debug
+gvPasswordMustChange: FALSE
+givenName: Test
+gvBirthdate: 1973-12-03
+gvbPK: AT:B:0:j/NxdRQhp+tNyE9WhHdBSYuy3hA=
+objectClass: gvPrincipal
+objectClass: gvOrgPerson
+objectClass: top
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+uid: test@bmspot.gv.at
+mail: test@bmspot.gv.at
+cn: Test User
+gvOPK: 01afdfkl6d2e0976a0292232dcfep06bk9d220
+gvPasswordExp: TRUE
+telephoneNumber: +43 900 777 777 7
+gvUserPassword: test
+gvScope: public
+gvOtherId: {WINDOWS}t839
+gvPasswordLocked: FALSE
+gvPasswordExpirationTime: 20061220083359Z
+gvGid: AT:B:1:12345
+gvParticipantOuId: AT:TEST:1
+gvPasswordRetryCount: 0
+sn: User
+gvLastLogin: 20061120085005Z
+gvOu: AT:TEST:2
+gvSecClass:: Mw==
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+
+dn: x509issuerDnsName=stdportal.test.ca.lfrz.at+x509serialNumber=1,gvGid=AT:B
+ :1:12345,ou=people, gvOuId=AT:TEST:1, dc=gv, dc=at
+x509serialNumber: 1
+x509issuerDnsName: stdportal.test.ca.lfrz.at
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvX509IssuerCanonical: CN=Standardportal TestCA,OU=stdportal,O=LFRZ,L=Vienna,
+ ST=Vienna,C=AT
+gvScope: public
+objectClass: gvX509Certificate
+objectClass: top
+gvStatus: active
+
+dn: ou=Applications, gvOuId=AT:TEST:1, dc=gv, dc=at
+ou: Applications
+objectClass: organizationalUnit
+objectClass: top
+
+dn: gvApplId=localtest@bmspot.gv.at,ou=Applications, gvOuId=AT:TEST:1, dc=gv,
+  dc=at
+jpegPhoto:: /9j/4AAQSkZJRgABAQEAYABgAAD/4QAwRXhpZgAASUkqAAgAAAABADEBAgAOAAAAG
+ gAAAAAAAABQYWludC5ORVQgMi42AP/bAEMAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBA
+ QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/bAEMBAQEBAQEBAQEBAQEBAQEBAQEBA
+ QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIABQAPAMBI
+ gACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEB
+ AAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1N
+ jc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkp
+ aanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfA
+ QADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFI
+ TEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdIS
+ UpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1t
+ re4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP7+K
+ K/CvxV+zv8AsN/tKf8ABQb/AIKSeFv2uvDvgP4vxeEv2c/2RPFN/wDDL43WWma98Nfhn4CuPCf7Q
+ Onaj8dPBmi+Jo5dA8P/ABDZU1/w/rvxY0mGPxn8PdA0Xw/aaX4g8M2Xiy9XX/ENJ+Ofib9kb4Q/s
+ h/8FCfG8vjfx/4y/aa/YT0T9ljxh/wlmi6pbfEf44/HLwL4e8YfGz9gK58Xy6vB4K8PeDfH3xTuN
+ e+N3w61ifxf4Z8LyeKPij8bfh34Uu9T0i8sdH0e/AP6Q6K/nd8BfsQ/s1+Gv2uv2NP2Of2om8JfH
+ nXPD/8AwTN+LWseIPhv4/8AB+hz/Bb9pX4yXH7R/wAJ/Hfx/wDjf46+Emox6n4E8V+Npvix4m1r4
+ p+G/DniO38S/wBjat4+8XeOdPhvPEHhaHxTpH6G/wDBNnTvDl5+yprngDQ5JfFnwE8H/Gz9pj4Pf
+ AiHxDZC90a5/Zt8D/GTxv4G+HXgzRIdQ0PS7bXPhX4O8NabJ8N/hndm31jS9c+FfhnwrdWmveJdN
+ u4NXvgD7M+EnxX8HfG3wJp/xI8A3V7feE9X1fxfpGl31/YT6ZPfP4M8Y6/4I1K9Sxugt3BZXeq+H
+ b64077ZFbXkmnyWst5Z2VzJLaQ+k1/Jz4Z+Cej+EfgZ/wAE4P2a/hV+xx+yV4o+BP7QHx7/AG3/A
+ BF8YPg58X/iHD+yr+zt8av2g/hd4m16H4E+AfjJ4f8Ah7+zf8fE+OviBvAPhbx7468F+AfHXwv1b
+ wxDqf7NPgrWby/tNc+HXw6toPra1/Zu+KHif9nH9ov9nW58W/8ABP74bPYftbfDE/B39hs/HrWv2
+ kP2Q/DL6Z8Jvh74quv2D/ilp9x8C/2avFvgn4d/GG5trz4saJ8E9M+FXjO3+HumeMdM8V6B4G8e/
+ DiOz+GM4B+4/wATPiv4O+Etn4PvPGN1ewL48+JPgT4UeGILCwnvp7/xj8RNet9B0K1k8sLBZ2UUk
+ 0+o6jf3s8EFvp9jdCA3WoPY6feek1/MnrHwU/Zo+I3w50b9mHx7/wAE/wD9nP4Tn9nn/gq/+zdoX
+ xF+A3hfXtB/ak/ZT0DUfjT4W+H/AIsvrj4GReMPhx4C0n4X+EvH3gLxb4buviN8HrL4FfBGxj8Ze
+ JPEfinVPA+uT/E258e+Ov6aY40iRIokSOKNFjjjjUIkaIAqIiKAqoqgKqqAFAAAAFAH5Z6J+z78B
+ Pj9+3R+2fbfHb4I/CH41W3gWD9jfxf4It/i38NfBnxHg8G+LLXwN8To7bxR4Vi8Y6LrMfh7xFbx/
+ JBrWkLZ6lEnyx3KrxX6SeMPAfgf4h6fpuk+P/BnhTxxpWjeJvC/jXSNM8YeHdI8TafpXjLwRrtj4
+ o8F+LdNstas722sfE3hDxNpemeIvC+vWscWq6BrunWOr6Td2moWlvcRlFAH52/Gf4K/Bv4//wDBQ
+ fSvhv8AHj4S/DP42fDvUP2GvEOo3/gL4ueA/C3xI8F3uoaT+0X4Fu9Kv7vwt4y0rWdDub3TLtVut
+ PuprF57O4VZraSOQBq/SvR9G0jw7pGleH/D+laboWg6Fptjo2iaJo9ja6ZpGj6RplrFZabpWlabZ
+ RQWWn6bp9lBDaWNjaQw2tpawxW9vFHFGiAooA8H1D9j/wDZK1bwT8T/AIaar+y7+zrqfw5+N3jq5
+ +KPxo8Aah8Evhpe+Cfi78TLzV9M1+7+IvxP8K3PhmXQvH3jq613RdG1q58XeK7DVvEE+r6TpmpS6
+ g15YWs0Wtpn7L37NGi/BK4/Zo0b9nf4F6T+zjd2ep6fdfs/6Z8JPAFh8Ermw1rW7jxLrNjcfCq18
+ PxeBJrPVvEd3d+INTtpNBaG/wBburjVbpJb+aSdiigDMX9kP9k5PgbJ+zEn7MH7O6fs1y3Au5f2e
+ l+Cnw2X4Gy3Y8TJ41FzJ8Jh4aHgJ7geMoo/FombQDIPE0aa9u/tVFux9BW9vBawQ2trDFbW1tFHb
+ 29vbxpDBBBCixwwwwxqscUUUaqkcaKqIiqqqFAFFFAH/9k=
+gvScope: public
+gvBanner: Derzeit aktiv; Achtung Wartungsfenster am 17.2.2009 10:05-10:06
+gvURLMapping: https://apptest:443/apptest/TestApplication|https://localtest/a
+ pptest/TestApplication|check|root
+gvURL: https://apptest/apptest/TestApplication/start
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvApplication
+objectClass: top
+cn: Lokale Testapplikation
+gvStatus: active
+gvApplId: localtest@bmspot.gv.at
+description: Testanwendung / Testen diverser Standardportal Funktionen
+gvMaxConcurrentRequests: 50
+
+dn: cn=test,gvApplId=localtest@bmspot.gv.at,ou=Applications, gvOuId=AT:TEST:1
+ , dc=gv, dc=at
+gvRightParameters: any
+gvScope: public
+gvSecClass:: Mg==
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvApplicationRight
+objectClass: top
+cn: test
+gvStatus: active
+gvRoleSyntax: DST=...
+gvRoleSyntax: (a=.+)|(b=.+)|(c=.+)((,a=.+)|(,b=.+)|(,c=.+))*
+gvRoleSyntax: (GKZ=\d{5,5})(,GKZ=\d{5,5})*
+gvRoleSyntax: (x=.*(,y=.*)?(,z=.*)?)|(y=.*(,x=.*)?(,z=.*))|(z=.*(,x=.*)?(,y=.
+ *)?)|(x=.*(,z=.*)?(,y=.*)?)|(y=.*(,z=.*)?(,x=.*))|(z=.*(,y=.*)?(,x=.*)?)
+gvApplId: localtest@bmspot.gv.at
+
+dn: gvApplId=testAxisEcho@bmspot.gv.at,ou=Applications, gvOuId=AT:TEST:1, dc=
+ gv, dc=at
+gvScope: public
+gvURLMapping: /soap/apptest/services/echo|http://localtest:2222/axis/services
+ /echo|check
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvApplication
+objectClass: top
+cn: testAxisEcho
+gvStatus: active
+description: Test SOAP service, distributed with axis, used to test the PVP S
+ oap Gateway
+gvApplId: testAxisEcho@bmspot.gv.at
+gvMaxConcurrentRequests: 1
+
+dn: cn=test,gvApplId=testAxisEcho@bmspot.gv.at,ou=Applications, gvOuId=AT:TES
+ T:1, dc=gv, dc=at
+gvRightParameters: any
+gvScope: public
+gvSecClass:: Mg==
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvApplicationRight
+objectClass: top
+cn: test
+gvStatus: active
+gvRoleSyntax: .*
+gvApplId: testAxisEcho@bmspot.gv.at
+
+dn: gvApplId=appUserStat@bmspot.gv.at,ou=Applications, gvOuId=AT:TEST:1, dc=g
+ v, dc=at
+jpegPhoto:: /9j/4AAQSkZJRgABAQEAYABgAAD/4QAyRXhpZgAASUkqAAgAAAABADEBAgAPAAAAG
+ gAAAAAAAABQYWludC5ORVQgMi42MQD//9sAQwABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBA
+ QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB/9sAQwEBAQEBAQEBAQEBAQEBAQEBA
+ QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB/8AAEQgAFAA8A
+ wEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFB
+ QQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqN
+ DU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio
+ 6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EA
+ B8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRB
+ AUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR
+ 0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKzt
+ LW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A/
+ v4ryrUPjf8ACrSpfivBqPjKwtZPgbbaPe/FkSW2p7fBFlr3h+LxVpd5q0i2LRvaT+HZk1iW5sXu4
+ bKyEkt89t5Mwj9G1W7urDS9SvrHTLrW72zsLy7s9GsZ7C2vdXure3kmt9Ms7nVbuw0u3ur+ZEtLe
+ fUr+ysIpZUkvLu2t1kmT8o/h7+yx+2noXxC8M698YPiD+zr8WfhL8VbL47eBvj/APCvwH8GvHPwz
+ 8e+HvCn7Q51f4gT+INZ+KvjH9o34p+DP2gL34S+OtO0D4UaDpkXwX+C6N8KvG3jTxL4di03/hH9L
+ +FHiQA/Q27+PHwqsPil4j+DF74mmtfiJ4T+FkHxp13SZ/DvimPS7X4cTa1qOgS61b+Lm0QeDdT1D
+ TdS00/294U0rxBe+L/Dmnar4Y1rXtB03RvGHhS/1n578ef8FGP2VPhrrmoaP4w174yWOnaDpHhjx
+ B4x+Imm/sn/ALWfib4IfDbQfFvhnSPG2n638Wv2gfC/wQ1n4HfCLSNK8Ga9pPjDxrqXxN+IXhOz+
+ HXhW8TxF8QJvDOjxz3sXyPqf7Nn7YnjX4U+BfE3jHwV8PV+O/xQ+OXiH4cftT6CPHUWo2ll+x/8Q
+ /h9afsy+OvEPw68dLa2M0PiV/CXw7+FH7UNv4G1C08Qxz+KY/Evwue6Gu6hY/EbQPaPGf7EHj/4z
+ /FH9qV/FP7Sn7SPwb+A3xh8TeFNF1T4JfB64/Zn0rwP8Zvh0PgH8LvAHjlte8Z6/wDAbx3+0n8PL
+ zxQ2k+I/hzqd/8AC341fCDxHpGiaJZeIPh/P4U8Rzw+NtRAPsH45/tE/DT9nfSfD2rfESL4nao/i
+ rWZtD0Dw78HPgR8c/2jvHuoXFrpt1quoaivw2/Z4+HPxS+INv4Y0m1tUi1vxld+GYPCOiajqfh/R
+ 9W1uy1bxN4dsdU1/hh8c/hb8ZLPTLz4d+JpNZOq+CPDvxCTTb/QPE3hfxBpfhvxRq3ibw9p0fijw
+ z4s0bQ/EXg7xPZeJPBfi7wx4n8CeLNL0Xxz4K8UeGdc8NeMfDmg67pl5p8XzJ+2z4P1rWh8INT0b
+ 9l/9oL4/wBh4V1XxJcLqv7IX7UumfswftA/DnWpLfQH8PW8beIPjz+yp4R+JHwN8VQ6fqx+J/g7x
+ H8drrTB4t8L/B9rr4D/ABW0y41HxV8IvgDxd+yt+0Rrmj+PfiH8Tf2Vbf8AaV+O/wAX/wBkfwN8I
+ vE3xM8TaN+x14V+Mt18HdJ/a+8WeLPGH7OfxZm0bxz4Y+FHiz4/6x+yr4/8HP4i8FeG4rn/AIJ8f
+ Hb47/BbxV4T+JOv+EvgX4i8KaT4gAP3RvfF3hzT/FWgeCLzVIoPFXijRvEviDQdHaK5afUdG8H3X
+ huz8SX8cqQtaxRaVdeLvDcMy3E8Msr6rB9mjmCTmLo6/D79jj9ijxh8F/FP7Gt38Tf2aIPE9z+zv
+ 4i/bs8DfDn4j6zpX7Hsviv4CfDj44+L/D/xH+DXii2t/hLo/wAHvB/gLTH+H9n4i+B/inwf+zV8M
+ oIvBnjfxJfeFNA8La78EJrz4tXv7g0AFFFFABRRRQAUUUUAFFFFAH//2Q==
+gvScope: public
+gvURLMapping: /apptest/pvpApps/appUserStat|http://localtest/apptest/pvpApps/a
+ ppUserStat|check
+gvURL: https://apptest/apptest/pvpApps/appUserStat/AppPortalUserStatistic
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvApplication
+objectClass: top
+cn: Benutzer Statistik - Anwendungsportal apptest
+gvStatus: active
+gvApplId: appUserStat@bmspot.gv.at
+description: Statistik �ber Benuter, die das Anwendungsportal in letzer Zeit 
+ benutzt haben
+
+dn: cn=userstatistic,gvApplId=appUserStat@bmspot.gv.at,ou=Applications, gvOuI
+ d=AT:TEST:1, dc=gv, dc=at
+gvSecClass:: Mg==
+gvApplId: appUserStat@bmspot.gv.at
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvScope: public
+objectClass: gvApplicationRight
+objectClass: top
+description: Erlaubt das Abfragen der Benutzerstatistik des Anwendungsportals
+gvStatus: active
+cn: userstatistic
+
+dn: gvApplId=userUserStat@bmspot.gv.at,ou=Applications, gvOuId=AT:TEST:1, dc=
+ gv, dc=at
+jpegPhoto:: /9j/4AAQSkZJRgABAQEAYABgAAD/4QAyRXhpZgAASUkqAAgAAAABADEBAgAPAAAAG
+ gAAAAAAAABQYWludC5ORVQgMi42MQAA/9sAQwABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBA
+ QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB/9sAQwEBAQEBAQEBAQEBAQEBAQEBA
+ QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB/8AAEQgAFAA8A
+ wEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFB
+ QQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqN
+ DU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio
+ 6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EA
+ B8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRB
+ AUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR
+ 0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKzt
+ LW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A/
+ v4r5X+KX7Z/wF+DXxHs/hd47vfivDrs0XhifWfEvhT9m79pH4j/AAg8AQeLtTm0zR5vi98ffhx8J
+ vFnwM+CsUKwrrniCT4t/EXwUnhDwbd6Z488WHRPBOraX4gvPqivyP8A2oPAv7Q8vx18d63+z1+z/
+ wDtQeCfjB4q0rwjo3wp/a0+DH7Sfwk1n9kyG4fSdFsYfEP7Zf7HHxu+P/wx0nXLvw94gs9R8HfFT
+ W/hb+zP8efjhqH7MeleDrn4GfH3w78W/wCwvAXwbAPqLw9+3t8APFHxqm/Z80rRP2pU+J1tqsWl3
+ ltrP7Bv7dHhrwVp8dzq2vaHp/iPUvi14j/Zz0r4S6b4C1jVPDHiC10D4k3/AI3t/h/4g/sm8n0Tx
+ Nf20fnFfhV+37+zN8ZPHfhX4deENX+MGla74/bWYvhtq3xR/ZZ/an+B3w8+Kt5oWh6p4rv9L+Enx
+ b+NfwY+H3wq+K+tyeDNB8R+PNK0P4d+M/E2sa/8P/C/irx7oVjqXg7wvr+t6d6po3gvxLaftP8Ax
+ H+Ilxpvl+Dte+AvwV8F6TrH2zT3+1+JfCXxC+PuueIdN/s9LptUg/s/S/Gvhi6+2XNjDp93/afkW
+ N1c3FlqENp8jfsm/sQeP/Aeg/s2eKvjr+0p+0j8QdU+C3hmw1rwl+zn4uuP2Z9K+Dfwe+IuofDfX
+ Phxcro+o/An4DfDz4k/EWz8DeDvGnjTwZ4TsPi18Zvi54c2arB4z1WDxH8RfD3hDx1oIB9FfFL9s
+ /4C/Br4j2fwu8d3vxXh12aLwxPrPiXwp+zd+0j8R/hB4Ag8XanNpmjzfF74+/Dj4TeLPgZ8FYoVh
+ XXPEEnxb+IvgpPCHg270zx54sOieCdW0vxBefQvhfxd4c8Z2Ooal4Y1SLVrHS/Efijwjf3EMVzEl
+ v4j8FeIdS8K+KNLIuoYHeXSPEOkalpc8sSvbST2kj2008JSVvyy/ag8C/tDy/HXx3rf7PX7P/7UH
+ gn4weKtK8I6N8Kf2tPgx+0n8JNZ/ZMhuH0nRbGHxD+2X+xx8bvj/wDDHSdcu/D3iCz1Hwd8VNb+F
+ v7M/wAefjhqH7MeleDrn4GfH3w78W/7C8BfBv4n/af/AOCeXxI8ffC/4gfBD4UfsVaF4Vj8RftG/
+ ty/GbR/in4Rtf2JrGJ/j98SNV8PeMf2Y/2ib3QPi9YfFnwzpng298K634m+EHxG+PMHwU1n9u34L
+ 654G0rRPgJ4SsPhv4v1n4j3AB/RLo3i7w54h1fxdoOjapFfav4D1mw8P+LbKOK5R9F1nU/DWh+ML
+ GwnkmhjhmluPDfiXQ9VDWklxEkGowxySJcLLDH0dfCH7Kvwbl+Hvxy/at+JOtfs72Xw18XfH24/Z
+ 98fa78YYtO+DSaz8S5tH+BfhTwNqnw+8X614D8V61461bxX8JvG3hnxnqOpHxLpjeAPJ+I9nqXw1
+ 8ZeLrnVvGkOg/d9ABRRRQAUUUUAFFFFABRRRQB//9k=
+gvScope: public
+gvURLMapping: /apptest/pvpApps/userUserStat|http://localtest/apptest/pvpApps/
+ userUserStat|check
+gvApplicationStatus: on-line
+gvURL: https://apptest/apptest/pvpApps/userUserStat/AppPortalUserStatistic
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvApplication
+objectClass: top
+cn: Benutzer Statistik - Stammportal stptest
+gvStatus: active
+description: Statistik �ber Benutzer des Stammportals
+gvApplId: userUserStat@bmspot.gv.at
+
+dn: cn=userstatistic,gvApplId=userUserStat@bmspot.gv.at,ou=Applications, gvOu
+ Id=AT:TEST:1, dc=gv, dc=at
+gvSecClass:: Mg==
+gvApplId: userUserStat@bmspot.gv.at
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvScope: public
+objectClass: gvApplicationRight
+objectClass: top
+description: Erlaubt das Abfragen der Benutzer-Statistik des Stammportals
+gvStatus: active
+cn: userstatistic
+
+dn: gvApplId=appDebugTicket@bmspot.gv.at,ou=Applications, gvOuId=AT:TEST:1, d
+ c=gv, dc=at
+jpegPhoto:: /9j/4AAQSkZJRgABAQEAYABgAAD/4QBmRXhpZgAASUkqAAgAAAAEABoBBQABAAAAP
+ gAAABsBBQABAAAARgAAACgBAwABAAAAAgAAADEBAgAPAAAATgAAAAAAAABgAAAAAQAAAGAAAAABA
+ AAAUGFpbnQuTkVUIDIuNjEAAP/bAEMAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBA
+ QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/bAEMBAQEBAQEBAQEBAQEBAQEBAQEBAQEBA
+ QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIABQAPAMBIgACE
+ QEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAA
+ X0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4O
+ TpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanq
+ KmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADA
+ QEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGE
+ kFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTV
+ FVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4u
+ brCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP6wf2rf2
+ gviPB44+DOj/Bf4fW93rEHxd8ZeD/DHin4yfCbxZpOi/wDC5vBmm2n9ueG/Dr/EXw58PLzw5ofir
+ 4H6z8YNS0v9qT4Z+K/iD4Yv/hh4b+NvgzwR4C+KPjnxD4Mtrb1n9l79pax8deJNV+Cnivw1f+Fvi
+ xaWHjr4tTR2XjvV/ip8OvEHg7xD8RDqEN/8N/ib4svLTxX4n0vQ28daFompaFP4Q8H6Z8PphZaB4
+ b8KeG/hhdfCo657F+0T+z34d/aP8HaD4T13xf48+H954U8caD8QvCvjb4Z33hvTfGnh3xJoNvqen
+ pLpd94r8LeMdHSz1fRdb1vw34isbnQ7mDXfDOtaz4e1AS6Rq2o2lz8i/sjfsG+Pvgv8YdS/aB+NP
+ xn0rx348n8HeJPB/h/wX8MfCniDwB8NfDieNvEOi61461zUl1/xt4x1vxlqvihvBfge7t7Bj4W8J
+ 6DrFr4i12fw14j8W61F4useOf11Yyk6bovBSpz9up3VaFRW9m6VlZxld83M+mljwaqzqnnFGVDlr
+ ZXXUVXU5UorDKEHzShFpVZTnNxUVDnveXPZRjKPon7dH7UfxI/Z/wBE8AeFPgF4N0T4oftA/EST4
+ heMvDfw11NNOvrnV/hT8AfA998T/jJqFppNz8RPhvepd67Bb+DvgV4N8Vx6vf6D4L+M/wAd/hHrH
+ jbR9S8IHV7OfU/aR/ai1DQ/2Ir79qT9mfXvh74mm8X+FvhF4l+EHizxXpWo+O/hxqOj/GLxf4F0P
+ w/4p1HRvB/jXwTqPijRU0PxmmtwWOiePPD51Jo4Iotct4ZGmr5juP2bv2hf2oP22Pj1+0Re/Hn9o
+ j9jrwd8ENH0n9k/9mX/AIVn8N/2VdR8RfEfwlc2Phr4oftFfGSbUv2o/wBmD4963pXhL4i/FS48H
+ fC7w/pHhS28L6brlh+zNZfEM6v4v0Xxx4ai8N/LNl+zt8XPht+wX+2b/wAE3Lrwl8ffH3hv4C/GP
+ 4VWX7OPxJt/D2vaTrvxc/Zi+NXxX+Hnxf04eAvFfwV8F/Dfwd4d8QfALxFf/F/4RXfgj4Iad4Of4
+ EeBPhh8O9W0Twt8PvAutfDae77D3j70Hxn/AGuP2dfjv+zD8Nv2oPiH+zl8dfCP7WvxL8X/AAS8H
+ 6j8A/2cfiZ+zp4m+GnxA8MfBP4ofHqx17xJaeP/ANrP9qK08feC9d8L/CDxZ4cv49Jh8D6l4T128
+ 8OanLc6/pd9qEGlcj4Z+Jf/AAUQ+L+oftHeNvhj8Y/2LfBvw9+Dnx5+M/wu8KfDHx9+yV8bPFfjD
+ xFo/wAItQFnCviP44aJ+3N4K8PaLqPiwxyRTeI7L4DX9j4UW4W+PhbxMtk9je/WHwe/Yx+BnwP8X
+ f8ACe+FX+N3jDxhBpt5pOj6/wDH/wDar/an/anvvCVjqflrrKeAT+018Zvi5F8PJ/EEUFra+Jb3w
+ NF4evvEljZWFhrtxqFlp9lBB8S/AL9gH4c/ETxH+1L43+Ndn+1Zo2oeLv2yP2gtZt/Bdr+1x+2v8
+ IPg7428CXnii3Gi3t1+z/4I+OHgr4H+MvBHjLS0kj1j7d8O9V8OfEbTJ72HxKviKzvbxJwD9CP2V
+ fj5o/7VP7Mv7Pv7THh/QNU8KaJ+0B8GPhr8ZNK8L61NDc6t4dsfiP4Q0jxbb6Jf3dvHFbX1zpceq
+ iykv7WKO1vzB9stkWCeMD3yqenadp+j6fYaRpFhZaXpWl2Vrp2maZp1rBY6fp2n2MCW1lYWFlbRx
+ W1nZWdtFFb2trbxRwW8EaRRRpGiqLlABRRRQAUUUUAFFFFABRRRQB//2Q==
+gvScope: public
+gvURLMapping: /apptest/pvpApps/appDebug|http://localtest/apptest/pvpApps/appD
+ ebug|check
+gvApplicationStatus: on-line
+gvURL: https://apptest/apptest/pvpApps/appDebug/AppPortalDebugTicket
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvApplication
+objectClass: top
+cn: Debug Ticket - Anwendungsportal apptest
+gvStatus: active
+description: Die Debug-Ticket Applikation erlaubt Debug-Tickets zu l�sen. Mit
+ hilfe dieses Mechanismus kann ein Stammportalbetreiber in Log-Informationen 
+ des Anwendungsportals Einsicht nehmen.
+gvApplId: appDebugTicket@bmspot.gv.at
+
+dn: cn=debug,gvApplId=appDebugTicket@bmspot.gv.at,ou=Applications, gvOuId=AT:
+ TEST:1, dc=gv, dc=at
+gvSecClass:: Mg==
+gvApplId: appDebugTicket@bmspot.gv.at
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvScope: public
+objectClass: gvApplicationRight
+objectClass: top
+description: Erm�glicht das L�sen von DebugTickets
+gvStatus: active
+cn: debug
+
+dn: gvApplId=userDebugTicket@bmspot.gv.at,ou=Applications, gvOuId=AT:TEST:1, 
+ dc=gv, dc=at
+jpegPhoto:: /9j/4AAQSkZJRgABAQEAYABgAAD/4QBmRXhpZgAASUkqAAgAAAAEABoBBQABAAAAP
+ gAAABsBBQABAAAARgAAACgBAwABAAAAAgAAADEBAgAPAAAATgAAAAAAAABgAAAAAQAAAGAAAAABA
+ AAAUGFpbnQuTkVUIDIuNjEA///bAEMAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBA
+ QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/bAEMBAQEBAQEBAQEBAQEBAQEBAQEBAQEBA
+ QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIABQAPAMBIgACE
+ QEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAA
+ X0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4O
+ TpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanq
+ KmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADA
+ QEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGE
+ kFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTV
+ FVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4u
+ brCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP6v/wBq7
+ 9oL4jw+Ofgzo3wX+H9vc6xB8W/GXhDwx4o+Mfwm8V6Rox+M3gzTbQa54b8OP8RvDnw8vPDmheKfg
+ frPxf1PTP2pPhn4q+IPhfUPhh4c+NngzwR4C+KXjjxD4Ntbb1n9l79pay8c+JdU+Cnizw1feFfix
+ aWPjn4syx2PjvV/ip8OvEPg/wAQ/EI6jDf/AA4+Jniy7tPFfibS9DfxzoeialoU3hHwhpnw+mFlo
+ Hhvwp4b+GF18KjrnsX7RX7PXh79o/wdoPhTXPF/jv4fX3hTxvoXxB8KeN/hpe+G9O8aeHPEeg2+p
+ aekumXvirwt4w0dbLV9G1rW/DniKxudDuYNc8Ma1rPh7UFl0jVtRtLn5F/ZG/YM8f8AwY+MWo/tA
+ /Gr4zaT478dy+DvEnhDw/4L+GPhTX/APw28OL428Q6LrXjrXdSXX/G3jHW/GGq+J28F+CLuCwLeF
+ vCmhavbeIdcn8N+I/FutR+LbHkmsWsXScHSeDlCXtlK6qwmrcjhaycZa3TenXozwqqzeGbUpUeWr
+ l1ZL2yk4r2CjHWUU7TblJqyXNpdvRJr7ek+MvhiL47Wf7PbWGvHxnffCXUvjLFqYtdPPhhfDGl+M
+ dK8EXFhJenVBqo159V1i2uIbVdFfT20+OeV9UjuVjtJfEfE37bPw70Dwp8Qte0zwP8AFDxn4h8E/
+ tES/ssaD8NfDNj4Fg8bfFb4z/YdF1Oz8P8Aw9ufFvj/AMLeA7bT9Q07WHv4vEHxI8b/AA80bT7LR
+ tau9cvNJtrW3lu/PPj9p/xw+Ff7Wfw8/aY+Gv7Ofj79p/wZd/s/eOfgR4x8F/B3xr8DvCnxS8H67
+ e/ELwb8QfCni6HTP2iPir8Dvh34k8Eala6N4j0PxDLY/E+18YeHtaXwu2m+DfFOj63ruq+D/nnTv
+ 2c/if4q/Zm/a+8L/tSfsWaD8boPjX+2J8Rviu/7Pngv41+EYPFuofCzU7XwWngHxv8ACH4la5qXw
+ z0XQ/jl4aufDela3oc2r/ET4Caj4O8Y6ZqmueFPino93ofhPV/EXWe6fXUv7bmg6F8DPE3xi+I/7
+ P8A+038JvFPh34jWfwcsf2d/HHw/wDDF18bfHvxa8R3WgWXw68E/Cy58CePfG3wR+JVr8S7rxX4b
+ g0H4meDvjRq3wW8Kvd+IB8WPiX8OP8AhWfxbPgHjde/4KRfB34dfCb9oP4l/HfwB8Yf2ffEX7LPg
+ Lw78WPjp8EPiLp/w18Q/F3wd8J/GGp6/pnhH4mWKfBj4ofFj4ZeNvCHiN/CXi9rC88AfEzxTeW97
+ 4T8R+GtVsNO8ZaVceGx+ePiH9iL9qT4m/s9a5d6hpX7Yml+HPhV+2j4B/af/Z0/ZN+Kv7fHiNf2t
+ L/4U+F/hVf/AAz+L3wc8S/tmfC/44+MfEOiax411fxv8Ufid+z74Z1L9sTxpoWm+J9M+E+k/Ev44
+ /DTwNr/AIq8EfC3s/8Ahkbxz40+A/7X3/Cv/wBkH9qb4QeO/iR8O/hr8NfBi/tn/wDBQjxH+1f8c
+ fHsfhfxzP4z1bTdP0rxV+1Z+1n8HvhL8MNF/tc3Xh3WNL/aEsPGPjbxPP4ytPFPwy8K6V4e8GeIv
+ HgB+yXwc+IXib4o+BNN8Y+Lvgp8Uv2ftY1Ce8jf4a/GO++EV/47021gl2WmoalL8Efit8ZvAkMGq
+ wlbqztIPHFxq9rE3k61pmk3ySWaepUUUAFFFFABRRRQAUUUUAFFFFAH/9k=
+gvScope: public
+gvURLMapping: /apptest/pvpApps/userDebug|http://localtest/apptest/pvpApps/use
+ rDebug|check
+gvApplicationStatus: on-line
+gvURL: https://apptest/apptest/pvpApps/userDebug/UserPortalDebugTicket
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvApplication
+objectClass: top
+cn: Debug Ticket stptest
+gvStatus: active
+description: Mithilfe dieser Applikation k�nnen Sie in Log-Daten des Stammpor
+ tals Einsicht nehmen.
+gvApplId: userDebugTicket@bmspot.gv.at
+
+dn: cn=debug,gvApplId=userDebugTicket@bmspot.gv.at,ou=Applications, gvOuId=AT
+ :TEST:1, dc=gv, dc=at
+gvSecClass:: Mg==
+gvApplId: userDebugTicket@bmspot.gv.at
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvScope: public
+objectClass: gvApplicationRight
+objectClass: top
+description: Erm�glicht das L�sen von DebugTickets f�r das Stammportal
+gvStatus: active
+cn: debug
+
+dn: ou=ApplicationProxy, gvOuId=AT:TEST:1, dc=gv, dc=at
+ou: ApplicationProxy
+objectClass: organizationalUnit
+objectClass: top
+
+dn: cn=localtest@bmspot.gv.at,ou=ApplicationProxy, gvOuId=AT:TEST:1, dc=gv, d
+ c=at
+gvOpenWindowJavaScript: window.open('https://stptest/apptest/TestApplication/
+ start',null,'width=1000,height=760,left=0,top=0,location=no,menubar=no,resiz
+ able=yes,toolbar=no,scrollbars=yes,status=no,dependent=no,blurfunction=0');
+gvScope: public
+gvURLMapping: https://stptest:443/apptest/TestApplication|https://apptest:443
+ /apptest/TestApplication|check|root
+gvExtensionItem: Hallo
+gvURL: https://stptest/apptest/TestApplication/start
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvApplicationProxy
+objectClass: top
+gvHideMenuitem: FALSE
+gvApplicationReference: gvApplId=localtest@bmspot.gv.at,ou=Applications,gvOuI
+ d=AT:TEST:1,dc=gv,dc=at
+cn: localtest@bmspot.gv.at
+gvStatus: active
+
+dn: cn=testAxisEcho@bmspot.gv.at,ou=ApplicationProxy, gvOuId=AT:TEST:1, dc=gv
+ , dc=at
+gvScope: public
+gvURLMapping: /soap/apptest/services/echo|https://apptest/soap/apptest/servic
+ es/echo|check
+gvURL: http://stptest/soap/apptest/services/echo
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvApplicationProxy
+objectClass: top
+gvHideMenuitem: TRUE
+gvApplicationReference: gvApplId=testAxisEcho@bmspot.gv.at,ou=Applications,gv
+ OuId=AT:TEST:1,dc=gv,dc=at
+cn: testAxisEcho@bmspot.gv.at
+gvStatus: active
+
+dn: cn=appDebugTicket@bmspot.gv.at,ou=ApplicationProxy, gvOuId=AT:TEST:1, dc=
+ gv, dc=at
+gvScope: public
+gvURLMapping: /apptest/pvpApps/appDebug|https://apptest/apptest/pvpApps/appDe
+ bug|check
+gvURL: /apptest/pvpApps/appDebug/AppPortalDebugTicket
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvApplicationProxy
+objectClass: top
+gvApplicationReference: gvApplId=appDebugTicket@bmspot.gv.at,ou=Applications,
+ gvOuId=AT:TEST:1,dc=gv,dc=at
+gvOpenWindow: TRUE
+cn: appDebugTicket@bmspot.gv.at
+gvStatus: active
+
+dn: cn=appUserStat@bmspot.gv.at,ou=ApplicationProxy, gvOuId=AT:TEST:1, dc=gv,
+  dc=at
+gvApplicationReference: gvApplId=appUserStat@bmspot.gv.at,ou=Applications,gvO
+ uId=AT:TEST:1,dc=gv,dc=at
+gvURL: /apptest/pvpApps/appUserStat/AppPortalUserStatistic
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvURLMapping: /apptest/pvpApps/appUserStat|https://apptest/apptest/pvpApps/ap
+ pUserStat|check
+gvScope: public
+objectClass: gvApplicationProxy
+objectClass: top
+gvStatus: active
+cn: appUserStat@bmspot.gv.at
+
+dn: cn=userUserStat@bmspot.gv.at,ou=ApplicationProxy, gvOuId=AT:TEST:1, dc=gv
+ , dc=at
+gvApplicationReference: gvApplId=userUserStat@bmspot.gv.at,ou=Applications,gv
+ OuId=AT:TEST:1,dc=gv,dc=at
+gvURL: /apptest/pvpApps/userUserStat/UserPortalUserStatistic
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvURLMapping: /apptest/pvpApps/userUserStat|https://apptest/apptest/pvpApps/u
+ serUserStat|check
+gvScope: public
+objectClass: gvApplicationProxy
+objectClass: top
+gvStatus: active
+cn: userUserStat@bmspot.gv.at
+
+dn: cn=userDebugTicket@bmspot.gv.at,ou=ApplicationProxy, gvOuId=AT:TEST:1, dc
+ =gv, dc=at
+gvApplicationReference: gvApplId=userDebugTicket@bmspot.gv.at,ou=Applications
+ ,gvOuId=AT:TEST:1,dc=gv,dc=at
+gvURL: /apptest/pvpApps/userDebug/UserPortalDebugTicket
+gvURLMapping: /apptest/pvpApps/userDebug|https://apptest/apptest/pvpApps/user
+ Debug|check
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvScope: public
+objectClass: gvApplicationProxy
+objectClass: top
+gvStatus: active
+cn: userDebugTicket@bmspot.gv.at
+
+dn: ou=portal, gvOuId=AT:TEST:1, dc=gv, dc=at
+ou: portal
+objectClass: organizationalUnit
+objectClass: top
+
+dn: cn=bmspot.gv.at,ou=portal, gvOuId=AT:TEST:1, dc=gv, dc=at
+gvOuId: AT:TEST:1
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvMaxRights: cn=test,gvApplId=testAxisEcho@bmspot.gv.at,ou=Applications,gvOuI
+ d=AT:TEST:1,dc=gv,dc=at
+gvMaxRights: cn=test,gvApplId=localtest@bmspot.gv.at,ou=Applications,gvOuId=A
+ T:TEST:1,dc=gv,dc=at$x=.*
+gvMaxRights: cn=test,gvApplId=localtest@bmspot.gv.at,ou=Applications,gvOuId=A
+ T:TEST:1,dc=gv,dc=at$y=.*
+gvMaxRights: cn=test,gvApplId=localtest@bmspot.gv.at,ou=Applications,gvOuId=A
+ T:TEST:1,dc=gv,dc=at$DST=...
+gvMaxRights: cn=userstatistic,gvApplId=appUserStat@bmspot.gv.at,ou=Applicatio
+ ns,gvOuId=AT:TEST:1,dc=gv,dc=at
+gvMaxRights: cn=userstatistic,gvApplId=userUserStat@bmspot.gv.at,ou=Applicati
+ ons,gvOuId=AT:TEST:1,dc=gv,dc=at
+gvMaxRights: cn=debug,gvApplId=appDebugTicket@bmspot.gv.at,ou=Applications,gv
+ OuId=AT:TEST:1,dc=gv,dc=at$
+gvMaxRights: cn=debug,gvApplId=userDebugTicket@bmspot.gv.at,ou=Applications,g
+ vOuId=AT:TEST:1,dc=gv,dc=at
+gvScope: public
+objectClass: gvParticipant
+objectClass: top
+gvStatus: active
+cn: bmspot.gv.at
+
+dn: cn=stp@bmspot.gv.at,ou=portal, gvOuId=AT:TEST:1, dc=gv, dc=at
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvScope: public
+objectClass: gvUserPortal
+objectClass: top
+gvStatus: active
+cn: stp@bmspot.gv.at
+gvParticipants: AT:TEST:1
+
+dn: x509issuerDnsName=stdportal.test.ca.lfrz.at+x509serialNumber=6,cn=stp@bms
+ pot.gv.at,ou=portal, gvOuId=AT:TEST:1, dc=gv, dc=at
+x509serialNumber: 6
+x509issuerDnsName: stdportal.test.ca.lfrz.at
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvX509IssuerCanonical: CN=Standardportal TestCA,OU=stdportal,O=LFRZ,L=Vienna,
+ ST=Vienna,C=AT
+gvScope: public
+objectClass: gvX509Certificate
+objectClass: top
+gvStatus: active
+
+dn: ou=OrgUnits, gvOuId=AT:TEST:1, dc=gv, dc=at
+ou: OrgUnits
+objectClass: organizationalUnit
+objectClass: top
+
+dn: gvOuId=AT:TEST:2,ou=OrgUnits, gvOuId=AT:TEST:1, dc=gv, dc=at
+gvScope: public
+gvNotValidBefore: 2000-01-01
+gvOuVKZ: BMSPT-I
+ou: BMSPT-I
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvOrgUnit
+objectClass: top
+objectClass: organizationalUnit
+gvOuCn: Bundesministerium f. Standardportaltests - Sektion I
+cn: Sektion I
+gvStatus: active
+gvOuId: AT:TEST:2
+
+dn: ou=Systems, gvOuId=AT:TEST:1, dc=gv, dc=at
+ou: Systems
+objectClass: organizationalUnit
+objectClass: top
+
+dn: cn=system1@bmspot.gv.at,ou=Systems, gvOuId=AT:TEST:1, dc=gv, dc=at
+gvParticipantOuId: AT:TEST:1
+gvScope: public
+gvSecClass:: Mw==
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvSystem
+objectClass: top
+uid: system1@bmspot.gv.at
+gvUserPassword: test
+gvRights: gvApplId=testAxisEcho@bmspot.gv.at,ou=Applications,gvOuId=AT:TEST:1
+ ,dc=gv,dc=at$test
+cn: system1@bmspot.gv.at
+gvStatus: active
+gvOuId: AT:TEST:1
+
+dn: x509issuerDnsName=stdportal.test.ca.lfrz.at+x509serialNumber=3,cn=system1
+ @bmspot.gv.at,ou=Systems, gvOuId=AT:TEST:1, dc=gv, dc=at
+x509serialNumber: 3
+x509issuerDnsName: stdportal.test.ca.lfrz.at
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvX509IssuerCanonical: CN=Standardportal TestCA,OU=stdportal,O=LFRZ,L=Vienna,
+ ST=Vienna,C=AT
+gvScope: public
+objectClass: gvX509Certificate
+objectClass: top
+gvStatus: active
+

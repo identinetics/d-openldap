@@ -1,0 +1,70 @@
+#
+# OID name space 1.3.6.1.4.1.50035 Identinetics IT-Services GmbH --
+
+# edushareAtPerson objectclass definition
+# designed to extend inetOrgPerson to complete an edushare user
+
+attributetype ( 1.3.6.1.4.1.50035.3  NAME 'nspmDistributionPassword'  DESC 'Passwort verschlüsselt'        EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.5  NAME 'phoSchulkennzahl'          DESC 'Schulkennzahlen'               EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.6  NAME 'phoSapPersnr'              DESC 'Pm_Sap_Personalnummer'         EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.7  NAME 'phoBPK'                    DESC 'Bpk'                           EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.8  NAME 'phoFunktionen'             DESC 'Funktionen'                    EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.9  NAME 'phoAccStBediensteter'      DESC 'Account_Status_B'              EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.10 NAME 'phoAccStStudent'           DESC 'Account_Status_St'             EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.11 NAME 'phoAccStWeiterbildung'     DESC 'Account_Status_A'              EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.13 NAME 'phoBenutzergruppe'         DESC 'Benutzergruppen'               EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.14 NAME 'phoChipIDBediensteter'     DESC 'Chipid_B'                      EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.15 NAME 'phoChipIDStudent'          DESC 'Chipid_St'                     EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.16 NAME 'phoChipIDWeiterbildung'    DESC 'Chipid_A'                      EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.17 NAME 'phoEmailBediensteter'      DESC 'Emailadresse_B'                EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.18 NAME 'phoEmailStudent'           DESC 'Emailadresse_St'               EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.19 NAME 'phoGebDatum'               DESC 'Geburtsdatum'                  EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.20 NAME 'phoIdentNr'                DESC 'Ident_Nr'                      EQUALITY integerMatch    SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 )
+attributetype ( 1.3.6.1.4.1.50035.21 NAME 'phoMatrikelnummer'         DESC 'Matrikelnummer'                EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.22 NAME 'phoMirfareIDBediensteter'  DESC 'Mirfareid_B'                   EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.23 NAME 'phoMirfareIDStudent'       DESC 'Mirfareid_St'                  EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.24 NAME 'phoMirfareIDWeiterbildung' DESC 'Mirfareid_A'                   EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.25 NAME 'phoOrgEinheiten'           DESC 'Org_Einheiten'                 EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.26 NAME 'phoPersonNr'               DESC 'Person_Nr'                     EQUALITY integerMatch    SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 )
+attributetype ( 1.3.6.1.4.1.50035.27 NAME 'phoPersonNrOBF'            DESC 'Person_Nr_Obf'                 EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.28 NAME 'phoPersonNrOBFStudent'     DESC 'St_Person_Nr_Obf'              EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.29 NAME 'phoPersonNrStudent'        DESC 'St_Person_Nr'                  EQUALITY integerMatch    SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 )
+attributetype ( 1.3.6.1.4.1.50035.30 NAME 'phoBediensteterAktiv'      DESC 'Activ_B_Person (X On Delete)'  EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.31 NAME 'phoStudentAktiv'           DESC 'Activ_St_Person (X On Delete)' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributetype ( 1.3.6.1.4.1.50035.32 NAME 'phoWeiterbildungAktiv'     DESC 'Activ_A_Person (X On Delete)'  EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+# 33 (redirectclaim) see wpvat.stdprofil.schema
+#attributetype ( 1.3.6.1.4.1.50035.33  NAME 'wkisRedirectUrl'         DESC 'WKSI/ADFS redirect claim'      EQUALITY caseExactMatch  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+
+objectClass ( 1.3.6.1.4.1.50035.1.1
+    NAME 'phoPerson'
+ 	AUXILIARY
+	MAY (
+        nspmDistributionPassword  $
+        phoSchulkennzahl          $
+        phoSapPersnr              $
+        phoBPK                    $
+        phoFunktionen             $
+        phoAccStBediensteter      $
+        phoAccStStudent           $
+        phoAccStWeiterbildung     $
+        phoBenutzergruppe         $
+        phoChipIDBediensteter     $
+        phoChipIDStudent          $
+        phoChipIDWeiterbildung    $
+        phoEmailBediensteter      $
+        phoEmailStudent           $
+        phoGebDatum               $
+        phoIdentNr                $
+        phoMatrikelnummer         $
+        phoMirfareIDBediensteter  $
+        phoMirfareIDStudent       $
+        phoMirfareIDWeiterbildung $
+        phoOrgEinheiten           $
+        phoPersonNr               $
+        phoPersonNrOBF            $
+        phoPersonNrOBFStudent     $
+        phoPersonNrStudent        $
+        phoBediensteterAktiv      $
+        phoStudentAktiv           $
+        phoWeiterbildungAktiv ) )

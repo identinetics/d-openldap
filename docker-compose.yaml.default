@@ -1,0 +1,44 @@
+version: "3"
+services:
+  openldap_pv:
+    build:
+      context: .
+    image: local/openldap_pv
+    container_name: openldap_pv
+    hostname: openldap_pv
+    labels:
+      x.service: openldap_pv
+    restart: unless-stopped
+    environment:
+        ROOTPW: changeit
+        USERNAME: slapd
+        SLAPDHOST: 0.0.0.0
+        DEBUGLEVEL: conns,config,stats,shell
+    networks:
+      dfrontend:
+        ipv4_address: 10.1.2.6
+    volumes:
+      - pvzdweb.config:/config:Z
+      - pvzdweb.var_lib_git:/var/lib/git:z
+      - pvzdweb.var_log:/var/log:Z
+      - pvzdweb.opt_PVZDweb_database:/opt/PVZDweb/database:Z
+  pvzdweb-sshtest:
+    build:
+        context: .
+        dockerfile: Dockerfile99.sshtest
+    image: r2h2/pvzdweb-sshtest
+    container_name: pvzdweb-sshtest
+    hostname: pvzdweb-sshtest
+    networks:
+      dfrontend:
+    volumes:
+      - pvzdweb-sshtest.log:/var/log:Z
+    cap_drop:
+      - ALL
+networks:
+  dfrontend:
+    external: true
+volumes:
+    openldap_pv.db:/var/db:Z
+    openldap_pv.etc:/etc/openldap:Z
+    openldap_pv.conf:/etc/conf:Z
