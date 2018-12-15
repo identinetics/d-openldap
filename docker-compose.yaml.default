@@ -13,14 +13,13 @@ services:
         ROOTPW: changeit
         USERNAME: slapd
         SLAPDHOST: 0.0.0.0
-        DEBUGLEVEL: conns,config,stats,shell
+        LOGLEVEL:
     networks:
       dfrontend:
         ipv4_address: 10.1.2.6
     volumes:
         - openldap_pv.etc_openldap:/etc/openldap:Z
         - openldap_pv.var_db:/var/db:Z
-        - openldap_pv.var_log:/var/log:Z
 networks:
   dfrontend:
     external: true
@@ -31,6 +30,3 @@ volumes:
     openldap_pv.var_db:
       external:
         name: openldap_pv.var_db
-    openldap_pv.var_log:
-      external:
-        name: openldap_pv.var_log

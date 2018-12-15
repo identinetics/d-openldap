@@ -60,61 +60,61 @@ gvbPK: j/NxdRQhp+tNyE9WhHdBSYuy3hA=
 cn: Test User
 givenName: Test
 sn: User
-schacGender: 9
 uid: test.user1234567
 mail: test.user123456@schule.at
 o: 321418
 ou: 4BK
 postalAddress: 1234 Ortschaft, Bahnhofstr. 123
 
-# ---------- User 2 -----------------
-dn: uid=test.user2_adam, dc=wpv, dc=at
-objectClass: wpvOrgPerson
-gvgid: 188999
-gvbPK: S4B7YUFKSFg77JzZJIZHDLaf+8jJ
-#cn: Adam Bäcker
-cn:: QWRhbSBCw6Rja2VyCg==
-givenName: Adam
-#sn: Bäcker
-sn:: QsOkY2tlcgo=
-schacGender: 1
-uid: test.user2_adam
-mail: adam.baecker@lms.at
-o: km-testskz
-ou: 1
-postalAddress: 1070 Wien, Siebensterngasse 31, Top 12
 
-# ---------- User 3 -----------------
-dn: uid=test.user3_eva, dc=wpv, dc=at
-objectClass: wpvOrgPerson
-gvgid: 176452
-gvbPK: 3vYjUkvzPsGHqZvIXmEbCyOXO24d
-#cn: Eva Schüßler-Bäcker
-cn:: RXZhIFNjaMO8w59sZXItQsOkY2tlcgo=
-givenName: Eva
-#sn: Schüßler-Bäcker
-sn:: U2Now7zDn2xlci1Cw6Rja2VyCg==
-schacGender: 2
-uid: test.user3_eva
-mail: eva.schuessler@lms.at 
-o: km-testskz
-ou: 1
-postalAddress: 1070 Wien, Siebensterngasse 31, Top 12
 
-# ---------- User 4 -----------------
-dn: uid=test.user4_berta, dc=wpv, dc=at
-objectClass: wpvOrgPerson
-gvgid: 8403654
-gvbPK: gVnzmhzOu2AFSe12FFgThVfKw2Sd
-#cn: Berta Chamäleon Koala
-cn:: QmVydGEgQ2hhbcOkbGVvbiBLb2FsYQo=
-givenName: Berta
-#sn: Chamäleon Koala
-sn:: Q2hhbcOkbGVvbiBLb2FsYQo=
-schacGender: 2
-uid: test.user4_berta
-mail: B.Cham@lms.at  
-o: km-testskz
-ou: 1
-postalAddress: 1070 Wien, Siebensterngasse 31, Top 12
+# User 1 - 4 are added in test_load_users2-4.py:
 
+# # ---------- User 2 -----------------
+# dn: uid=test.user2_adam, dc=wpv, dc=at
+# objectClass: wpvOrgPerson
+# gvgid: 188999
+# gvbPK: S4B7YUFKSFg77JzZJIZHDLaf+8jJ
+# #cn: Adam Bäcker
+# cn:: QWRhbSBCw6Rja2VyCg==
+# givenName: Adam
+# #sn: Bäcker
+# sn:: QsOkY2tlcgo=
+# uid: test.user2_adam
+# mail: adam.baecker@lms.at
+# o: km-testskz
+# ou: 1
+# postalAddress: 1070 Wien, Siebensterngasse 31, Top 12
+# 
+# # ---------- User 3 -----------------
+# dn: uid=test.user3_eva, dc=wpv, dc=at
+# objectClass: wpvOrgPerson
+# gvgid: 176452
+# gvbPK: 3vYjUkvzPsGHqZvIXmEbCyOXO24d
+# #cn: Eva Schüßler-Bäcker
+# cn:: RXZhIFNjaMO8w59sZXItQsOkY2tlcgo=
+# givenName: Eva
+# #sn: Schüßler-Bäcker
+# sn:: U2Now7zDn2xlci1Cw6Rja2VyCg==
+# uid: test.user3_eva
+# mail: eva.schuessler@lms.at 
+# o: km-testskz
+# ou: 1
+# postalAddress: 1070 Wien, Siebensterngasse 31, Top 12
+# 
+# # ---------- User 4 -----------------
+# dn: uid=test.user4_berta, dc=wpv, dc=at
+# objectClass: wpvOrgPerson
+# gvgid: 8403654
+# gvbPK: gVnzmhzOu2AFSe12FFgThVfKw2Sd
+# #cn: Berta Chamäleon Koala
+# cn:: QmVydGEgQ2hhbcOkbGVvbiBLb2FsYQo=
+# givenName: Berta
+# #sn: Chamäleon Koala
+# sn:: Q2hhbcOkbGVvbiBLb2FsYQo=
+# uid: test.user4_berta
+# mail: B.Cham@lms.at  
+# o: km-testskz
+# ou: 1
+# postalAddress: 1070 Wien, Siebensterngasse 31, Top 12
+# 

@@ -5,6 +5,7 @@ pipeline {
         string(defaultValue: 'True', description: '"True": initial cleanup: remove container and volumes; otherwise leave empty', name: 'start_clean')
         string(description: '"True": "Set --nocache for docker build; otherwise leave empty', name: 'nocache')
         string(description: '"True": push docker image after build; otherwise leave empty', name: 'pushimage')
+        string(description: '"True": keep running after test; otherwise leave empty to delete container and volumes', name: 'keep_running')
     }
 
     stages {
@@ -17,7 +18,7 @@ pipeline {
                    else
                        cp docker-compose.yaml.default docker-compose.yaml
                    fi
-                   head docker-compose.yaml
+                   head -6 docker-compose.yaml | tail -1
                 '''
             }
         }
@@ -26,8 +27,10 @@ pipeline {
                 expression { params.$start_clean?.trim() != '' }
             }
             steps {
-                sh '''
-                    docker-compose down -v 2>/dev/null | true
+                sh '''#!/bin/bash -xv
+                    source ./jenkins_scripts.sh
+                    remove_containers
+                    remove_volumes
                 '''
             }
         }
@@ -39,25 +42,30 @@ pipeline {
                 '''
             }
         }
-        stage('Setup and Test') {
+        stage('Setup and Start') {
             steps {
                 sh '''#!/bin/bash
-                    source ./dcshell/dcshell_lib.sh
                     echo "initailize persistent data"
                     docker volume create --name=openldap_pv.etc_openldap
                     docker volume create --name=openldap_pv.var_db
-                    docker volume create --name=openldap_pv.var_log
                     docker-compose run -T --rm openldap_pv /tests/init_rootpw.sh
                     echo "start server"
+                    export LOGLEVEL='conns,config,stats,shell'
                     docker-compose up -d openldap_pv
+                    echo "server started"
                     sleep 2
-                    docker-compose logs openldap_pv
-                    docker-compose exec -T openldap_pv /tests/init_sample_data_gvAt.sh
-                    docker-compose exec -T openldap_pv /tests/init_sample_data_wpvAT.sh
-                    docker-compose exec -T openldap_pv /tests/auth_testuser.sh
-                    docker-compose exec -T openldap_pv /tests/dump_testuser.sh
-                    docker-compose exec -T openldap_pv python /tests/test.py
-                    docker-compose exec -T openldap_pv python /tests/test1.py
+                    docker container ls | grep openldap_pv | grep Restarting && \
+                        echo "container restarting" && exit 1
+                    docker container ls | grep openldap_pv
+                '''
+            }
+        }
+        stage('Test') {
+            steps {
+                sh '''#!/bin/bash
+                    ttyopt=''; [[ -t 0 ]] && ttyopt='-t'  # autodetect tty
+                    docker exec -i $ttyopt openldap_pv tests/gvAt/test_all.sh
+                    docker exec -i $ttyopt openldap_pv tests/wpvAt/test_all.sh
                '''
             }
         }
@@ -69,17 +77,22 @@ pipeline {
                 sh '''
                     default_registry=$(docker info 2> /dev/null |egrep '^Registry' | awk '{print $2}')
                     echo "  Docker default registry: $default_registry"
-                    ./dcshell/build -f dc.yaml -P
+                    docker-compose push
                 '''
             }
         }
     }
     post {
         always {
-            sh '''
-                echo 'Remove container, volumes'
-                docker-compose -f dc.yaml rm --force -v 2>/dev/null || true
-                docker rm --force -v shibsp 2>/dev/null || true  # in case docker-compose fails ..
+            sh '''#!/bin/bash
+                if [[ "$keep_running" ]]; then
+                    echo "Keep container running"
+                else
+                    echo 'Remove container & volumes'
+                    source ./jenkins_scripts.sh
+                    remove_containers
+                    remove_volumes
+                fi
             '''
         }
     }

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -e
 
 ldapsearch -h localhost -p $SLAPDPORT -x -D uid=tester@testinetics.at,gln=9110017333914,dc=wpv,dc=at \
     -w test -b dc=at -L 'uid=tester@testinetics.at'

@@ -1,0 +1,159 @@
+dn: dc=at
+objectClass: domain
+dc: at
+
+dn: dc=gv,dc=at
+objectClass: domain
+dc: gv
+
+dn: ou=portal,dc=gv,dc=at
+objectClass: organizationalUnit
+ou: portal
+
+dn: gvOuId=AT:TEST:1, dc=gv, dc=at
+gvScope: public
+gvNotValidBefore: 2000-01-01
+gvOuVKZ: BMSPT
+o: Bundesministerium f. Standardportal offizielle Tests
+ou: Bundesministerium f. Standardportal offizielle Tests
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvOrganisation
+gvOuCn: BM f. Stdportal Test
+cn: BM Standard Portal Test
+gvStatus: active
+dc: test
+gvOuId: AT:TEST:1
+
+dn: ou=people, gvOuId=AT:TEST:1, dc=gv, dc=at
+ou: people
+objectClass: organizationalUnit
+
+dn: gvGid=AT:B:1:12345,ou=people, gvOuId=AT:TEST:1, dc=gv, dc=at
+displayName: User Test
+gvStatus: active
+gvRights: gvApplId=localtest@bmspot.gv.at,ou=Applications,gvOuId=AT:TEST:1,dc=gv,dc=AT$test(x=12,y=13,z=99);test(GKZ=12345);test(DST=xxx);test(test=true) ;test(a=a,b=1,b=2,c=3);test(x=,y=)
+gvRights: gvApplId=testAxisEcho@bmspot.gv.at,ou=Applications,gvOuId=AT:TEST:1,dc=gv,dc=at$test
+gvRights: gvApplId=appUserStat@bmsport.gv.at,ou=Applications,gvOuId=AT:TEST:1,dc=gv,dc=at$userstatistic
+gvRights: gvApplId=userUserStat@bmspot.gv.at,ou=Applications,gvOuId=AT:TEST:1,dc=gv,dc=at$userstatistic
+gvRights: gvApplId=appDebugTicket@bmspot.gv.at,ou=Applications,gvOuId=AT:TEST:1,dc=gv,dc=at$debug
+gvRights: gvApplId=userDebugTicket@bmspot.gv.at,ou=Applications,gvOuId=AT:TEST:1,dc=gv,dc=at$debug
+gvPasswordMustChange: FALSE
+givenName: Test
+gvBirthdate: 1973-12-03
+gvbPK: AT:B:0:j/NxdRQhp+tNyE9WhHdBSYuy3hA=
+objectClass: gvPrincipal
+objectClass: gvOrgPerson
+uid: test@bmspot.gv.at
+mail: test@bmspot.gv.at
+cn: Test User
+gvOPK: 01afdfkl6d2e0976a0292232dcfep06bk9d220
+gvPasswordExp: TRUE
+telephoneNumber: +43 900 777 777 7
+gvUserPassword: test
+gvScope: public
+gvOtherId: {WINDOWS}t839
+gvPasswordLocked: FALSE
+gvPasswordExpirationTime: 20061220083359Z
+gvGid: AT:B:1:12345
+gvParticipantOuId: AT:TEST:1
+gvPasswordRetryCount: 0
+sn: User
+gvLastLogin: 20061120085005Z
+gvOu: AT:TEST:2
+gvSecClass:: Mw==
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+
+dn: x509issuerDnsName=stdportal.test.ca.lfrz.at+x509serialNumber=1,gvGid=AT:B
+ :1:12345,ou=people, gvOuId=AT:TEST:1, dc=gv, dc=at
+x509serialNumber: 1
+x509issuerDnsName: stdportal.test.ca.lfrz.at
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvX509IssuerCanonical: CN=Standardportal TestCA,OU=stdportal,O=LFRZ,L=Vienna,
+ ST=Vienna,C=AT
+gvScope: public
+objectClass: gvX509Certificate
+objectClass: top
+gvStatus: active
+
+dn: ou=Applications, gvOuId=AT:TEST:1, dc=gv, dc=at
+ou: Applications
+objectClass: organizationalUnit
+
+dn: ou=portal, gvOuId=AT:TEST:1, dc=gv, dc=at
+ou: portal
+objectClass: organizationalUnit
+objectClass: top
+
+dn: cn=bmspot.gv.at,ou=portal, gvOuId=AT:TEST:1, dc=gv, dc=at
+gvOuId: AT:TEST:1
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvMaxRights: cn=test,gvApplId=testAxisEcho@bmspot.gv.at,ou=Applications,gvOuI
+ d=AT:TEST:1,dc=gv,dc=at
+gvMaxRights: cn=test,gvApplId=localtest@bmspot.gv.at,ou=Applications,gvOuId=A
+ T:TEST:1,dc=gv,dc=at$x=.*
+gvMaxRights: cn=test,gvApplId=localtest@bmspot.gv.at,ou=Applications,gvOuId=A
+ T:TEST:1,dc=gv,dc=at$y=.*
+gvMaxRights: cn=test,gvApplId=localtest@bmspot.gv.at,ou=Applications,gvOuId=A
+ T:TEST:1,dc=gv,dc=at$DST=...
+gvMaxRights: cn=userstatistic,gvApplId=appUserStat@bmspot.gv.at,ou=Applicatio
+ ns,gvOuId=AT:TEST:1,dc=gv,dc=at
+gvMaxRights: cn=userstatistic,gvApplId=userUserStat@bmspot.gv.at,ou=Applicati
+ ons,gvOuId=AT:TEST:1,dc=gv,dc=at
+gvMaxRights: cn=debug,gvApplId=appDebugTicket@bmspot.gv.at,ou=Applications,gv
+ OuId=AT:TEST:1,dc=gv,dc=at$
+gvMaxRights: cn=debug,gvApplId=userDebugTicket@bmspot.gv.at,ou=Applications,g
+ vOuId=AT:TEST:1,dc=gv,dc=at
+gvScope: public
+objectClass: gvParticipant
+objectClass: top
+gvStatus: active
+cn: bmspot.gv.at
+
+dn: cn=stp@bmspot.gv.at,ou=portal, gvOuId=AT:TEST:1, dc=gv, dc=at
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+gvScope: public
+objectClass: gvUserPortal
+objectClass: top
+gvStatus: active
+cn: stp@bmspot.gv.at
+gvParticipants: AT:TEST:1
+
+dn: ou=OrgUnits, gvOuId=AT:TEST:1, dc=gv, dc=at
+ou: OrgUnits
+objectClass: organizationalUnit
+objectClass: top
+
+dn: gvOuId=AT:TEST:2,ou=OrgUnits, gvOuId=AT:TEST:1, dc=gv, dc=at
+gvScope: public
+gvNotValidBefore: 2000-01-01
+gvOuVKZ: BMSPT-I
+ou: BMSPT-I
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvOrgUnit
+objectClass: top
+objectClass: organizationalUnit
+gvOuCn: Bundesministerium f. Standardportaltests - Sektion I
+cn: Sektion I
+gvStatus: active
+gvOuId: AT:TEST:2
+
+dn: ou=Systems, gvOuId=AT:TEST:1, dc=gv, dc=at
+ou: Systems
+objectClass: organizationalUnit
+objectClass: top
+
+dn: cn=system1@bmspot.gv.at,ou=Systems, gvOuId=AT:TEST:1, dc=gv, dc=at
+gvParticipantOuId: AT:TEST:1
+gvScope: public
+gvSecClass:: Mw==
+gvSource: test@bmspot.gv.at/2005-11-07T23:00:00Z
+objectClass: gvSystem
+objectClass: top
+uid: system1@bmspot.gv.at
+gvUserPassword: test
+gvRights: gvApplId=testAxisEcho@bmspot.gv.at,ou=Applications,gvOuId=AT:TEST:1
+ ,dc=gv,dc=at$test
+cn: system1@bmspot.gv.at
+gvStatus: active
+gvOuId: AT:TEST:1
+

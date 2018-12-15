@@ -523,8 +523,8 @@ objectClass ( 1.2.40.0.10.2.1.0.2 NAME 'gvOrgUnit'
 	DESC 'Standard ObjectClass'
 	SUP organizationalUnit
 	STRUCTURAL
-	MUST ( cn $ gvNotValidBefore $ ou $ gvOuVKZ $ gvOucn $ gvOuId $ gvScope $ gvSource $ gvStatus )
-	MAY ( gvPhysicalAddress $ l $ description $ postalAddress $ postalCode $ postOfficeBox $ street $ co $ mail $ telephoneNumber $ gvWebAddress $ gvDeleteDate $ company $ gvLegalSuccessor $ gvOuIdParent $ c $ gvNotValidAfter $ gvSortKey $ gvOtherId $ gvImageRef $ facsimileTelephoneNumber ) )
+	MUST ( cn $ gvOuVKZ $ gvOucn $ gvOuId $ gvScope $ gvSource $ gvStatus )
+	MAY ( gvPhysicalAddress $ co $ mail $ gvWebAddress $ gvDeleteDate $ company $ gvLegalSuccessor $ gvOuIdParent $ c $ gvNotValidBefore $ gvNotValidAfter $ gvSortKey $ gvOtherId $ gvImageRef $ facsimileTelephoneNumber ) )
 
 objectClass ( 1.2.40.0.10.2.1.0.24 NAME 'gvOrgUnitHist'
 	DESC 'Standard ObjectClass'
@@ -537,8 +537,8 @@ objectClass ( 1.2.40.0.10.2.1.0.7 NAME 'gvOrganisation'
 	DESC 'Standard ObjectClass'
 	SUP gvOrgUnit
 	STRUCTURAL
-	MUST ( dc $ o $ cn $ gvOuVKZ $ gvNotValidBefore $ ou $ gvOuId $ gvScope $ gvSource $ gvStatus )
-	MAY ( gvPhysicalAddress $ l $ description $ postalAddress $ postalCode $ postOfficeBox $ street $ co $ mail $ telephoneNumber $ gvWebAddress $ gvDeleteDate $ company $ gvLegalSuccessor $ gvOuIdParent $ c $ gvNotValidAfter $ gvSortKey $ gvOtherId $ gvOucn $ gvImageRef $ facsimileTelephoneNumber ) )
+	MUST ( dc $ o $ cn $ gvOuVKZ $  ou $ gvOuId $ gvScope $ gvSource $ gvStatus )
+	MAY ( gvPhysicalAddress $ l $ description $ postalAddress $ postalCode $ postOfficeBox $ street $ co $ mail $ telephoneNumber $ gvWebAddress $ gvDeleteDate $ company $ gvLegalSuccessor $ gvOuIdParent $ c $ gvNotValidAfter $ gvSortKey $ gvOtherId $ gvOucn $ gvImageRef ) )
 
 objectClass ( 1.2.40.0.10.2.1.0.25 NAME 'gvOrganisationHist'
 	DESC 'Standard ObjectClass'
