@@ -27,7 +27,7 @@ pipeline {
                 expression { params.$start_clean?.trim() != '' }
             }
             steps {
-                sh '''#!/bin/bash -xv
+                sh '''#!/bin/bash
                     source ./jenkins_scripts.sh
                     remove_containers
                     remove_volumes
@@ -46,8 +46,6 @@ pipeline {
             steps {
                 sh '''#!/bin/bash
                     echo "initailize persistent data"
-                    docker volume create --name=openldap_pv.etc_openldap
-                    docker volume create --name=openldap_pv.var_db
                     docker-compose run -T --rm openldap_pv /tests/init_rootpw.sh
                     echo "start server"
                     export LOGLEVEL='conns,config,stats,shell'

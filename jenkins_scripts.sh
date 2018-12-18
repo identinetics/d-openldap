@@ -1,9 +1,9 @@
-#!/usr/bin/env bash -xv
+#!/usr/bin/env bash
 
 
 remove_containers() {
     for cont in 'openldap_pv'; do
-        container_found=$(docker container ls --format '{{.Names}} {{.Status}}' | grep $cont)
+        container_found=$(docker container ls --format '{{.Names}} {{.Status}}' | grep ^$cont$)
         if [[ "$container_found" ]]; then
             docker container rm -f $cont -v
         fi
@@ -13,7 +13,7 @@ remove_containers() {
 
 remove_volumes() {
     for vol in 'openldap_pv.etc_openldap' 'openldap_pv.var_db'; do
-        volume_found=$(docker volume ls --format '{{.Name}}' | grep $vol)
+        volume_found=$(docker volume ls --format '{{.Name}}' | egrep ^$vol$)
         if [[ "$volume_found" ]]; then
             docker volume rm $vol
         fi
