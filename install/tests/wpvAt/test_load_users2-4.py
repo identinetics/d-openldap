@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 import os
 from ldap3 import Server, Connection, ALL, LDIF, MODIFY_REPLACE
 
@@ -11,7 +9,7 @@ rootdn = 'dc=at'
 admindn = 'cn=admin,dc=at'
 testpw = 'test'
 
-print('connection establishment')
+print('testing python-ldap: load users 2-4')
 s = Server(host, get_info=ALL)
 c = Connection(s, admindn, rootpw, auto_bind=True, raise_exceptions=False)
 

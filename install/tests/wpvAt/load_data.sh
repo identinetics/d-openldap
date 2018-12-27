@@ -1,27 +1,20 @@
-#!/bin/sh
+#!/bin/sh -e
+
+echo "load initial data (wpv)"
 
 ldapadd -h localhost -p $SLAPDPORT \
     -x -D cn=admin,dc=at -w $ROOTPW \
-    -c -f /tests/wpvAt/data/initial_data.ldif
+    -f /tests/data/initial_data_dcat.ldif \
+    || true  # may be added by gvAt tests
 
 
-ldappasswd -h localhost -p $SLAPDPORT \
+ldapadd -h localhost -p $SLAPDPORT \
     -x -D cn=admin,dc=at -w $ROOTPW \
-    -s 'test' \
-    'uid=tester@testinetics.at,gln=9110017333914,dc=wpv,dc=at'
+    -f /tests/wpvAt/data/initial_data.ldif  -c || rc=$?
+    if ((rc != 0)) && ((rc != 68)); then
+        echo "ldapadd failed with code=${rc}"
+        exit $rc
+    fi
 
-ldappasswd -h localhost -p $SLAPDPORT \
-    -x -D cn=admin,dc=at -w $ROOTPW \
-    -s 'test' 'uid=test.user1234567,dc=wpv,dc=at'
 
-ldappasswd -h localhost -p $SLAPDPORT \
-    -x -D cn=admin,dc=at -w $ROOTPW \
-    -s 'test' 'uid=test.user2_adam,dc=wpv,dc=at'
 
-ldappasswd -h localhost -p $SLAPDPORT \
-    -x -D cn=admin,dc=at -w $ROOTPW \
-    -s 'test' 'uid=test.user3_eva,dc=wpv,dc=at'
-
-ldappasswd -h localhost -p $SLAPDPORT \
-    -x -D cn=admin,dc=at -w $ROOTPW \
-    -s 'test' 'uid=test.user4_berta,dc=wpv,dc=at'

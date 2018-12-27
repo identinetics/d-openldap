@@ -1,6 +1,7 @@
 # standard ldap.gv.at schema 2.4
+# Änderungen R2H2 2018-12-27: alias gvgid/gid, gvRights/rights, gvBpk/wbpkHash für WPV-Kompatibilität
 attributetype ( 1.2.40.0.10.2.1.1.11 NAME 'gvAmtstitel' DESC 'ldap.gv.at Attribut' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{64} SINGLE-VALUE )
-attributetype ( 1.2.40.0.10.2.1.1.1 NAME 'gvGid' DESC 'ldap.gv.at Attribut' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{128} SINGLE-VALUE )
+attributetype ( 1.2.40.0.10.2.1.1.1 NAME ('gvGid' 'gid') DESC 'ldap.gv.at Attribut' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{128} SINGLE-VALUE )
 attributetype ( 1.2.40.0.10.2.1.1.5 NAME 'gvOu' DESC 'ldap.gv.at Attribut' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32} )
 attributetype ( 1.2.40.0.10.2.1.1.3 NAME 'gvOuId' DESC 'ldap.gv.at Attribut' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32} SINGLE-VALUE )
 attributetype ( 1.2.40.0.10.2.1.1.19 NAME 'gvScope' DESC 'ldap.gv.at Attribut' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32} SINGLE-VALUE )
@@ -19,7 +20,7 @@ attributetype ( 1.2.40.0.10.2.1.1.57 NAME 'gvSortKey' DESC 'ldap.gv.at Attribut'
 attributetype ( 1.2.40.0.10.2.1.1.63 NAME 'gvOuCn' DESC 'ldap.gv.at Attribut' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{1024} SINGLE-VALUE )
 attributetype ( 1.2.40.0.10.2.1.1.65 NAME 'gvNotValidBefore' DESC 'ldap.gv.at Attribut' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{10} SINGLE-VALUE )
 attributetype ( 1.2.40.0.10.2.1.1.67 NAME 'gvNotValidAfter' DESC 'ldap.gv.at Attribut' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{10} SINGLE-VALUE )
-attributetype ( 1.2.40.0.10.2.1.1.149 NAME 'gvbPK' DESC 'ldap.gv.at Attribut' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32} SINGLE-VALUE )
+attributetype ( 1.2.40.0.10.2.1.1.149 NAME ('gvbPK' 'wbpkHash') DESC 'ldap.gv.at Attribut' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32} SINGLE-VALUE )
 attributetype ( 1.2.40.0.10.2.1.1.151 NAME 'gvOPK' DESC 'ldap.gv.at Attribut' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{128} SINGLE-VALUE )
 attributetype ( 1.2.40.0.10.2.1.1.153 NAME 'gvOuVKZ' DESC 'ldap.gv.at Attribut' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32} SINGLE-VALUE )
 attributetype ( 1.2.40.0.10.2.1.1.229 NAME 'gvIntTitle' DESC 'ldap.gv.at 2.4 Attribut' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{64} SINGLE-VALUE )
@@ -57,7 +58,7 @@ attributetype ( 1.2.40.0.10.2.1.1.365 NAME 'gvMetaDataURL' DESC 'Eine oder mehre
 attributetype ( 1.2.40.0.10.2.1.1.369 NAME 'gvSamlSpEntityId' DESC 'SAML SP Entity Id' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{1024} )
 attributetype ( 1.2.40.0.10.2.1.1.379 NAME 'gvSamlIdpEntityId' DESC 'SAML IdP Entity Id' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{1024} )
 attributetype ( 1.2.40.0.10.2.1.1.395 NAME 'gvMaxSecClass' DESC 'Maximale gvSecClass, die Benutzer eines Portal erreichen koennen (z.B. 0). Anwendungsfaelle sind vor Allem Test- und Entwicklungsportale. Das AWP bzw. der SP muessen den Wert von gvSecClass des Benutzers dementsprechend hinuntersetzen. Ist das Attribut nicht gesetzt, wird die gvSecClass nicht limitiert.' EQUALITY integerMatch ORDERING integerOrderingMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )#
-attributetype ( 1.2.40.0.10.2.1.1.21 NAME 'gvRights' DESC 'Liste der dem Benutzer gewaehrten Rechte pro Anwendung im Stammportal einschliesslich der dazugehoerigen Parameter' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32767} )
+attributetype ( 1.2.40.0.10.2.1.1.21 NAME  ('gvRights' 'rights') DESC 'Liste der dem Benutzer gewaehrten Rechte pro Anwendung im Stammportal einschliesslich der dazugehoerigen Parameter' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32767} )
 attributetype ( 1.2.40.0.10.2.1.1.43 NAME 'gvSecClass' DESC 'Administrative Sicherheitsklasse der Person' EQUALITY integerMatch ORDERING integerOrderingMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
 attributetype ( 1.2.40.0.10.2.1.1.71 NAME 'gvParticipantOuId' DESC 'gvOuId der zugriffsberechtigten Stelle' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32} SINGLE-VALUE )
 attributetype ( 1.2.40.0.10.2.1.1.73 NAME 'gvUserPassword' DESC 'Benutzerpasswort' EQUALITY caseExactMatch SUBSTR caseExactSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )

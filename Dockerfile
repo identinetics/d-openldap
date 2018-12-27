@@ -15,17 +15,13 @@ RUN pip3 install ldap3
 COPY install/conf/*.conf /etc/openldap/
 COPY install/conf/schema/* /etc/openldap/schema/
 COPY install/conf/DB_CONFIG /var/db/
-COPY install/scripts/* /scripts/
+COPY install/bin/* /opt/bin/
 COPY install/tests /tests
-RUN chmod -R +x /scripts/* /tests/*
+RUN chmod -R +x /opt/bin/* /tests/*
 
-ARG SLAPDPORT=8389
-ENV SLAPDPORT $SLAPDPORT
-
-# using the shared grop method from https://docs.openshift.com/container-platform/3.3/creating_images/guidelines.html (Support Arbitrary User IDs)
-RUN chown -R ldap:root /etc/openldap /tests /var/db \
+RUN chown -R ldap:ldap /etc/openldap /tests /var/db \
  && chmod 600 $(find   /etc/openldap -type f) \
  && chmod 700 $(find   /etc/openldap -type d)
 VOLUME /etc/openldap/ /var/db/
 
-CMD /scripts/start.sh
+CMD /opt/bin/start.sh

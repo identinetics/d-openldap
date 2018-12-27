@@ -1,7 +1,3 @@
-dn: dc=at
-objectClass: domain
-dc: at
-
 dn: dc=wpv,dc=at
 objectClass: domain
 dc: wpv

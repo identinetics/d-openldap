@@ -1,6 +1,13 @@
-#!/bin/bash
+#!/bin/bash -xv
+PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
 
-ldapsearch -h localhost -p $SLAPDPORT -x -D cn=admin,dc=at -w $ROOTPW -b dc=at -L 'objectClass=gvOrgPerson'
+echo 'searching gvOrgPerson entries'
 
-# ldapmodify -h localhost -p $SLAPDPORT -x -D cn=admin,dc=at -w $ROOTPW -f /tmp/x.ldif
+ldapsearch -h localhost -p $SLAPDPORT -x -D cn=admin,dc=at -w $ROOTPW -b dc=at -L 'objectClass=gvOrgPerson' >/dev/null \
+    || rc=$?
+
+if ((rc != 0)); then
+    echo "ldapsearch failed with code=${rc}"
+    exit $rc
+fi
 

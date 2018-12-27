@@ -1,6 +1,8 @@
-dn: dc=at
-objectClass: domain
-dc: at
+dn: cn=admin, dc=at
+displayName: LDAP administrator
+objectClass: inetOrgPerson
+cn: LDAP administrator
+sn: administrator
 
 dn: dc=gv,dc=at
 objectClass: domain

@@ -59,23 +59,25 @@ pipeline {
                 sh '''#!/bin/bash -e
                     source ./jenkins_scripts.sh
                     create_docker_network
-                    echo "initailize persistent data"
+                    echo "initialize persistent data"
                     nottyopt=''; [[ -t 0 ]] || nottyopt='-T'  # autodetect tty
                     docker-compose -p 'dc' run $nottyopt --rm $service /tests/init_rootpw.sh
-                    echo "start server"
+                    echo "Starting $service"
                     export LOGLEVEL='conns,config,stats,shell'
                     docker-compose --no-ansi up -d
-                    wait_for_container_up && echo "service started"
+                    wait_for_container_up && echo "$service started"
                 '''
             }
         }
         stage('Test: run') {
             steps {
-                sh '''#!/bin/bash -e
+                sh '''#!/bin/bash +e
                     ttyopt=''; [[ -t 0 ]] && ttyopt='-t'  # autodetect tty
                     # docker-compose not working here:
                     docker exec $ttyopt $container /tests/gvAt/test_all.sh
+                    echo "'docker exec /tests/gvAt/test_all.sh' returned code=${rc}"
                     docker exec $ttyopt $container /tests/wpvAt/test_all.sh
+                    echo "'docker exec /tests/gvAt/test_all.sh' returned code=${rc}"
                '''
             }
         }
@@ -87,7 +89,8 @@ pipeline {
                 sh '''#!/bin/bash -e
                     default_registry=$(docker info 2> /dev/null |egrep '^Registry' | awk '{print $2}')
                     echo "  Docker default registry: $default_registry"
-                    docker-compose push
+                    docker-compose push \
+                        || (rc=$?; echo "'docker-compose push' failed with code=${rc}"; exit $rc)
                 '''
             }
         }
