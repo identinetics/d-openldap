@@ -16,7 +16,7 @@ services:
         LOGLEVEL:
     networks:
       dfrontend:
-        ipv4_address: 10.1.2.6
+        #ipv4_address: 10.1.2.6
     volumes:
         - openldap_pv.etc_openldap:/etc/openldap:Z
         - openldap_pv.var_db:/var/db:Z

@@ -10,4 +10,3 @@ else
     echo "rootpw directive added to slapd.conf"
 fi
 
-echo "next step to do: start slapd and load initial data"

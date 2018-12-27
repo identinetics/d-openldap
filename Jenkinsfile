@@ -3,9 +3,11 @@ pipeline {
     environment {
         compose_cfg='docker-compose.yaml'
         compose_f_opt=''
-        d_containers='openldap dc_openldap_run_1'
-        d_volumes='openldap_pv.etc_openldap openldap_pv.var_db'
-
+        container='openldap_pv'
+        d_containers="${container} dc_${container}_run_1"
+        d_volumes="${container}.etc_openldap ${container}.var_db"
+        network='dfrontend'
+        service='openldap_pv'
     }
     options { disableConcurrentBuilds() }
     parameters {
@@ -22,9 +24,9 @@ pipeline {
                     echo "using ${compose_cfg} as docker-compose config file"
                     if [[ "$DOCKER_REGISTRY_USER" ]]; then
                         echo "  Docker registry user: $DOCKER_REGISTRY_USER"
-                        ./dcshell/update_config.sh "${compose_cfg.default}" $compose_cfg
+                        ./dcshell/update_config.sh "${compose_cfg}.default" $compose_cfg
                     else
-                        cp "${compose_cfg.default}" $compose_cfg
+                        cp "${compose_cfg}.default" $compose_cfg
                     fi
                     egrep '( image:| container_name:)' $compose_cfg || echo "missing keys in ${compose_cfg}"
                 '''
@@ -37,7 +39,6 @@ pipeline {
             steps {
                 sh '''#!/bin/bash -e
                     source ./jenkins_scripts.sh
-                    set_docker_artifact_names
                     remove_containers $d_containers && echo '.'
                     remove_volumes $d_volumes && echo '.'
                 '''
@@ -57,28 +58,24 @@ pipeline {
             steps {
                 sh '''#!/bin/bash -e
                     source ./jenkins_scripts.sh
-                    set_docker_artifact_names
-                    create_docker_network                
+                    create_docker_network
                     echo "initailize persistent data"
                     nottyopt=''; [[ -t 0 ]] || nottyopt='-T'  # autodetect tty
-                    docker-compose run $nottyopt -p 'dc' --rm openldap_pv /tests/init_rootpw.sh
+                    docker-compose -p 'dc' run $nottyopt --rm $service /tests/init_rootpw.sh
                     echo "start server"
                     export LOGLEVEL='conns,config,stats,shell'
-                    docker-compose --no-ansi up -d openldap_pv
-                    echo "server started"
-                    sleep 2
-                    docker container ls | grep openldap_pv | grep Restarting && \
-                        echo "container restarting" && exit 1
-                    docker container ls | grep openldap_pv
+                    docker-compose --no-ansi up -d
+                    wait_for_container_up && echo "service started"
                 '''
             }
         }
         stage('Test: run') {
             steps {
                 sh '''#!/bin/bash -e
-                    nottyopt=''; [[ -t 0 ]] || nottyopt='-T'  # autodetect tty
-                    docker exec -i $nottyopt openldap_pv tests/gvAt/test_all.sh
-                    docker exec -i $nottyopt openldap_pv tests/wpvAt/test_all.sh
+                    ttyopt=''; [[ -t 0 ]] && ttyopt='-t'  # autodetect tty
+                    # docker-compose not working here:
+                    docker exec $ttyopt $container /tests/gvAt/test_all.sh
+                    docker exec $ttyopt $container /tests/wpvAt/test_all.sh
                '''
             }
         }
