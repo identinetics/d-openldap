@@ -20,5 +20,6 @@ cmd="slapd -4 -h ${slapdurischema}://${slapdhost}:${slapdport}/ -u ldap  -u ldap
 echo $cmd
 $cmd && echo 'OpenLDAP server started.'
 
-cd /opt/djangoldap
 bash -l
+echo 'exiting this shell may exit the container.'
+
