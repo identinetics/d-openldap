@@ -159,3 +159,17 @@ cn: system1@bmspot.gv.at
 gvStatus: active
 gvOuId: AT:TEST:1
 
+dn: gvOuId=AT:VKZ:XFN-318886a,dc=gv,dc=at
+gvScope: public
+gvNotValidBefore: 2000-01-01
+gvOuVKZ: XFN-318886a
+o: Identinetics IT-Service GmbH
+ou: Identinetics IT-Service GmbH
+gvSource: PVZD test data
+objectClass: gvOrganisation
+gvOuCn: Identinetics GmbH
+cn: Identinetics GmbH
+gvStatus: active
+dc: test
+gvOuId: AT:VKZ:XFN-318886a
+

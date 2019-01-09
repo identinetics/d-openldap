@@ -1,5 +1,5 @@
-#!/bin/bash -xv
-PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
+#!/bin/bash
+#PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
 
 echo 'searching gvOrgPerson entries'
 

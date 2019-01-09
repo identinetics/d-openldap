@@ -89,8 +89,10 @@ pipeline {
                 sh '''#!/bin/bash -e
                     default_registry=$(docker info 2> /dev/null |egrep '^Registry' | awk '{print $2}')
                     echo "  Docker default registry: $default_registry"
-                    docker-compose push \
-                        || (rc=$?; echo "'docker-compose push' failed with code=${rc}"; exit $rc)
+                    docker-compose push
+                    rc=$?
+                    ((rc>0)) && echo "'docker-compose push' failed with code=${rc}"
+                    exit $rc
                 '''
             }
         }
