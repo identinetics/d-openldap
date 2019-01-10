@@ -49,7 +49,10 @@ pipeline {
                 sh '''#!/bin/bash -e
                     source ./jenkins_scripts.sh
                     remove_container_if_not_running
-                    [[ "$nocache" ]] && nocacheopt='-c' && echo 'build with option nocache'
+                    if [[ "$nocache" ]]; then
+                         nocacheopt='-c'
+                         echo 'build with option nocache'
+                    fi
                     docker-compose build $nocacheopt
                 '''
             }
