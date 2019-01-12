@@ -8,6 +8,7 @@ pipeline {
         d_volumes="${container}.etc_openldap ${container}.var_db"
         network='dfrontend'
         service='openldap_pv'
+        projopt='-p jenkins'
     }
     options { disableConcurrentBuilds() }
     parameters {
@@ -64,10 +65,10 @@ pipeline {
                     create_docker_network
                     echo "initialize persistent data"
                     nottyopt=''; [[ -t 0 ]] || nottyopt='-T'  # autodetect tty
-                    docker-compose -p 'dc' run $nottyopt --rm $service /tests/init_rootpw.sh
+                    docker-compose $projop run $nottyopt --rm $service /tests/init_rootpw.sh
                     echo "Starting $service"
                     export LOGLEVEL='conns,config,stats,shell'
-                    docker-compose --no-ansi up -d
+                    docker-compose $projop --no-ansi up -d
                     wait_for_container_up && echo "$service started"
                 '''
             }
@@ -92,7 +93,7 @@ pipeline {
                 sh '''#!/bin/bash -e
                     default_registry=$(docker info 2> /dev/null |egrep '^Registry' | awk '{print $2}')
                     echo "  Docker default registry: $default_registry"
-                    docker-compose push
+                    docker-compose $projop push
                     rc=$?
                     ((rc>0)) && echo "'docker-compose push' failed with code=${rc}"
                     exit $rc
