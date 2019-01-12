@@ -1,4 +1,4 @@
-version: "3.4"
+version: "3.5"
 services:
   openldap_pv:
     build:
@@ -21,8 +21,11 @@ services:
     volumes:
       - openldap_pv.etc_openldap:/etc/openldap:Z
       - openldap_pv.var_db:/var/db:Z
+
 networks:
   jenkins:
+    name: jenkins
+
 volumes:
   openldap_pv.etc_openldap:
     name: openldap_pv.etc_openldap
