@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
     environment:
       ROOTPW: changeit
-      SLAPDHOST: "127.0.0.1"
+      SLAPDHOST: "0.0.0.0"
       SLAPDPORT: "12389"
       LOGLEVEL: "conns,config,stats,shell"
     networks:
