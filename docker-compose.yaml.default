@@ -14,9 +14,6 @@ services:
       SLAPDHOST: "127.0.0.1"
       SLAPDPORT: "12389"
       LOGLEVEL: "conns,config,stats,shell"
-    networks:
-      dfrontend:
-        #ipv4_address: 10.1.2.6
     #ports:
     #  - target: 12389
     #    published: 12389
@@ -24,9 +21,6 @@ services:
     volumes:
       - openldap_pv.etc_openldap:/etc/openldap:Z
       - openldap_pv.var_db:/var/db:Z
-networks:
-  dfrontend:
-    external: true
 volumes:
     openldap_pv.etc_openldap:
       name: openldap_pv.etc_openldap
