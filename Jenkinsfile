@@ -13,9 +13,9 @@ pipeline {
     options { disableConcurrentBuilds() }
     parameters {
         string(defaultValue: 'True', description: '"True": initial cleanup: remove container and volumes; otherwise leave empty', name: 'start_clean')
-        string(description: '"True": "Set --nocache for docker build; otherwise leave empty', name: 'nocache')
-        string(description: '"True": push docker image after build; otherwise leave empty', name: 'pushimage')
-        string(description: '"True": keep running after test; otherwise leave empty to delete container and volumes', name: 'keep_running')
+        string(defaultValue: '', description: '"True": "Set --nocache for docker build; otherwise leave empty', name: 'nocache')
+        string(defaultValue: '', description: '"True": push docker image after build; otherwise leave empty', name: 'pushimage')
+        string(defaultValue: '', description: '"True": keep running after test; otherwise leave empty to delete container and volumes', name: 'keep_running')
     }
 
     stages {
@@ -51,7 +51,7 @@ pipeline {
                     source ./jenkins_scripts.sh
                     remove_container_if_not_running
                     if [[ "$nocache" ]]; then
-                         nocacheopt='-c'
+                         nocacheopt='--no-cache'
                          echo 'build with option nocache'
                     fi
                     docker-compose build $nocacheopt
@@ -81,7 +81,7 @@ pipeline {
                     docker exec $ttyopt $container /tests/gvAt/test_all.sh
                     echo "'docker exec /tests/gvAt/test_all.sh' returned code=${rc}"
                     docker exec $ttyopt $container /tests/wpvAt/test_all.sh
-                    echo "'docker exec /tests/gvAt/test_all.sh' returned code=${rc}"
+                    echo "'docker exec /tests/wpvAt/test_all.sh' returned code=${rc}"
                '''
             }
         }
