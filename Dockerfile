@@ -1,12 +1,7 @@
-FROM  centos:7
+FROM intra/centos7_py36_base
 
-# && yum -y install epel-release \
 RUN yum -y update \
  && yum -y install curl iproute lsof net-tools \
- && yum -y install https://centos7.iuscommunity.org/ius-release.rpm \
- && yum -y install python36u python36u-pip \
- && ln -s /usr/bin/python3.6 /usr/bin/python3 \
- && ln -s /usr/bin/pip3.6 /usr/bin/pip3 \
  && yum -y install openldap openldap-servers openldap-clients \
  && yum clean all
 RUN pip3 install ldap3
