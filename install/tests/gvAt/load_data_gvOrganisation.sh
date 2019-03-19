@@ -2,8 +2,9 @@
 
 ldapadd -h localhost -p $SLAPDPORT -c \
     -x -D cn=admin,dc=at -w $ROOTPW \
-    -f /tests/gvAt/data/gvorganisation_b64encoded.ldif -c || rc=$?
+    -f /tests/gvAt/data/gvOrganisation.ldif -c || rc=$?
     if ((rc != 0)) && ((rc != 68)); then
         echo "ldapadd failed with code=${rc}"
         exit $rc
     fi
+

@@ -1,0 +1,190 @@
+dn: ou=Portal,gvOuId=AT:L3,dc=at
+ou: Portal
+objectClass: organizationalUnit
+objectClass: top
+
+dn: ou=Portal,gvOuId=AT:L5,dc=at
+objectClass: top
+objectClass: organizationalUnit
+ou: portal
+
+dn: ou=Portal,gvOuId=AT:L6,dc=at
+ou: Portal
+objectClass: organizationalUnit
+objectClass: top
+
+dn: ou=portal,gvOuId=AT:B:1,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:B:70,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:B:101,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:B:102,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:B:104,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:B:111,dc=at
+ou: portal
+objectClass: organizationalUnit
+objectClass: top
+
+dn: ou=portal,gvOuId=AT:B:112,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:B:115,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:L1,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:L2,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:L8,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=Portal,gvOuId=AT:VKZ:L9,dc=at
+objectClass: top
+objectClass: organizationalUnit
+ou: portal
+
+dn: ou=portal,gvOuId=AT:VKZ:BEV,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:SHV,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:KNOT,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:L4:000000,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:L9-FSW,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:BBA-STA,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:L7:GKZ:70101,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=Portal,gvOuId=AT:L7:LVN:000001,dc=at
+objectClass: top
+objectClass: organizationalUnit
+ou: portal
+
+dn: ou=portal,gvOuId=AT:VKZ:GGA-20201,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:GGA-30201,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:GGA-40101,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:GGA-40201,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:GGA-40301,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:GGA-50101,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:GGA-60101,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:UFB-247082g,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:UFB-262918w,dc=at
+ou: portal
+objectClass: organizationalUnit
+objectClass: top
+
+dn: ou=Portal,gvOuId=AT:VKZ:XFN-160573m,dc=at
+objectClass: top
+objectClass: organizationalUnit
+ou: portal
+
+dn: ou=Portal,gvOuId=AT:VKZ:XFN-187010s,dc=at
+ou: Portal
+objectClass: organizationalUnit
+objectClass: top
+
+dn: ou=portal,gvOuId=AT:VKZ:XFN-210146p,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:XFN-210220y,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:XFN-223056z,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=portal,gvOuId=AT:VKZ:XFN-290909h,dc=at
+ou: portal
+objectClass: top
+objectClass: organizationalUnit
+
