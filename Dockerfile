@@ -1,8 +1,9 @@
 FROM intra/centos7_py36_base
 
 RUN yum -y update \
- && yum -y install curl iproute lsof net-tools \
- && yum -y install openldap openldap-servers openldap-clients \
+ && yum -y install curl iproute lsof net-tools wget \
+ && wget -q https://repo.symas.com/configs/SOFL/rhel7/sofl.repo -O /etc/yum.repos.d/sofl.repo \
+ && yum -y install symas-openldap-clients symas-openldap-servers \
  && yum clean all
 RUN pip3 install ldap3
 
