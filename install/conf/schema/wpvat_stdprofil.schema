@@ -16,7 +16,7 @@ attributetype ( 1.3.6.1.4.1.50035.33  NAME 'wkisRedirectUrl'
     SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
 
 
-# TODO need to define own OIS space ---
+# TODO need to define own OID space ---
 objectClass ( 1.2.40.0.10.2.1.0.900 NAME 'wpvOrganization'
 	DESC 'WPV Organization ObjectClass'
 	SUP Organization
@@ -29,7 +29,7 @@ objectClass ( 1.2.40.0.10.2.1.0.901 NAME 'wpvOrgPerson'
 	SUP inetOrgPerson
 	STRUCTURAL
 	MUST ( gid $ gn $ sn )
-	MAY ( rights $ wbpkHash $ gln $ localityName $ organizationName $ orgSourcePin $ wkisRedirectUrl ) )
+	MAY ( rights $ wbpkHash $ gln $ localityName $ organizationName $ orgSourcePin $ wkisRedirectUrl $ schacGender ) )
 
 
 

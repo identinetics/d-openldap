@@ -7,6 +7,28 @@ objectClass: wpvOrganization
 o: Identinetics IT-Services GmbH
 gln: 9110017333914
 
+dn: uid=wkisredirect@testinetics.at,gln=9110017333914,dc=wpv,dc=at
+objectClass: wpvOrgPerson
+cn: WKIS Redirect User
+displayName: User, WKIS Redirect
+schacGender: 1
+givenName: WKIS Redirect
+gln: 9110017333914
+localityName: Tulln
+uid: wkisredirect@testinetics.at
+gid: wkisredirect@testinetics.at
+mail: wkisredirect@testinetics.at
+o: Identinetics IT-Services GmbH
+orgSourcePin: L3/SJl/0YKgeUqQuKVxUV4G8ksw=
+postalCode: 3430
+postalAddress: Mozartstr. 1/4 $ 3430 Tulln
+rights: Administrator
+street: Mozartstr. 1/4
+sn: User
+telephoneNumber: +43 1 2345 6778 90
+title: BSc
+wkisRedirectUrl: https://www.test.wpv.portalverbund.at/test_redirect_target.html
+
 dn: uid=tester@testinetics.at,gln=9110017333914,dc=wpv,dc=at
 objectClass: wpvOrgPerson
 cn: Test User

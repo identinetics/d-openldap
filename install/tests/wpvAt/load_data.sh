@@ -4,7 +4,7 @@ echo "load initial data (wpv)"
 
 ldapadd -h localhost -p $SLAPDPORT \
     -x -D cn=admin,dc=at -w $ROOTPW \
-    -f /tests/data/initial_data_dcat.ldif \
+    -f /tests/data/initial_data_dcat.ldif -c \
     || true  # may be added by gvAt tests
 
 

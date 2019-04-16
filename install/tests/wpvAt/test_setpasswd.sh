@@ -27,3 +27,8 @@ ldappasswd -h localhost -p $SLAPDPORT \
     -x -D cn=admin,dc=at -w $ROOTPW \
     -s 'test' 'uid=test.user4_berta,dc=wpv,dc=at' \
     || (echo 'ldappasswd failed'; exit 6)
+
+ldappasswd -h localhost -p $SLAPDPORT \
+    -x -D cn=admin,dc=at -w $ROOTPW \
+    -s 'test' 'uid=wkisredirect@testinetics.at,gln=9110017333914,dc=wpv,dc=at' \
+    || (echo 'ldappasswd failed'; exit 6)
